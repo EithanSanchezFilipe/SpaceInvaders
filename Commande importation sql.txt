@@ -1,0 +1,11 @@
+Commande pour importer la base de données
+
+Ouvrir docker
+Copier l'ID du container 
+Ouvrir le CMD
+Copier : docker exec -i "ContainerID" mysql -u root -proot < path_file.sql
+
+Ou ouvrir le CMD
+Taper la commande docker cp path_file.sql "ContainerID":/tmp/
+puis ouvrir le sh4 depuis docker
+Taper la commande mysql -u root -proot < /tmp/FileName
