@@ -1,0 +1,5 @@
+Mon idée c'est de faire un jeu type SpaceInvaders mais en tant qu'apocalypse zombie
+
+donc les ennemis sont des zombies et le personnage est un soldat avec une arme qui tire
+
+il commencera avec un pistolet puis au fur et a mesure des zombies tuées il pourra activer sa capacité qui est une mitraillette pendant 10 secondes
