@@ -1,0 +1,68 @@
+TOP 5 joueurs
+
+SELECT * 
+FROM `t_joueur` 
+ORDER BY jouNombrePoints DESC 
+LIMIT 5;
+
+Prix max,min,moyen
+
+SELECT MAX(armPrix) AS PrixMaximal,
+MIN(armPrix) AS PrixMinimum,
+AVG(armPrix) AS PrixMoyen 
+FROM `t_arme`;
+
+nombre total de commandes par joueur et trier
+
+SELECT jo.idJoueur AS IdJoueur,
+COUNT(co.fkJoueur) AS NombreCommandes 
+FROM t_joueur jo, t_commande co 
+GROUP BY co.fkJoueur
+
+joueur ayant fait plus de 2 commandes
+
+SELECT fkJoueur AS IdJoueur,
+COUNT(fkJoueur) AS NombreCommandes 
+FROM t_commande
+GROUP BY fkJoueur
+HAVING NombreCommandes > 2
+
+pseudo et le nom des armes pour chaque commande
+
+SELECT jouPseudo, arm.armNom 
+FROM t_joueur jo, t_commande co, t_detail_commande dc, t_arme arm 
+WHERE idJoueur = co.fkJoueur AND dc.fkCommande = co.idCommande AND dc.fkArme = arm.idArme;
+
+total dépensé chaque joueur et trier en ordre asc et prendre les 10 premiers
+
+SELECT idJoueur AS IdJoueur, SUM(arm.armPrix * dc.detQuantiteCommande) AS TotalDepense
+FROM t_joueur jo, t_commande co, t_detail_commande dc, t_arme arm 
+WHERE idJoueur = co.fkJoueur AND 
+dc.fkCommande = co.idCommande AND 
+dc.fkArme = arm.idArme
+GROUP BY idJoueur
+ORDER BY TotalDepense DESC
+LIMIT 10;
+
+toutes les commandes et pseudo même si pseudo est vide
+
+SELECT jo.*, co.* 
+FROM t_joueur jo
+LEFT JOIN t_commande co ON jo.idJoueur = co.fkJoueur
+LEFT JOIN t_detail_commande dc ON co.idCommande = dc.fkCommande;
+
+tous les joueurs et commandes meme si jamais commandé
+
+SELECT jo.jouPseudo, co.* 
+FROM t_commande co
+LEFT JOIN t_joueur jo ON co.fkJoueur = jo.idJoueur
+
+nmbre total d'armes achetées par chaque joueur même si 0
+
+SELECT jo.idJoueur, COUNT(arm.idArme) 
+FROM t_joueur jo
+LEFT JOIN t_commande co ON jo.idJoueur = co.fkJoueur
+LEFT JOIN t_detail_commande dc ON co.idCommande = dc.fkCommande
+LEFT JOIN t_arme arm ON arm.idArme = dc.fkArme
+GROUP BY jo.idJoueur
+
