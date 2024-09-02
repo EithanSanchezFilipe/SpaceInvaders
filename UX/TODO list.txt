@@ -1,0 +1,12 @@
+TODO list
+
+Analyse :
+  ▢ Création de personas
+
+Conception : 
+  ▢ Tous les écrans en low-fidelity
+  ▢ écran éditeur de niveau en high-fidelity
+  ▢ Déscription des choix efféctués
+
+évaluation :
+  ▢ A/B testing
