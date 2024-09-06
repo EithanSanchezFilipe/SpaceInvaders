@@ -2,6 +2,9 @@ TODO list
 
 Analyse :
   ▢ Création de personas
+  ▢ Choix de palette
+  ▢ interface eco-friendly
+  ▢ Rendre l'interface plus accessible
 
 Conception : 
   ▢ Tous les écrans en low-fidelity
