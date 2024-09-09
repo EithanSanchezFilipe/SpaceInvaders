@@ -66,3 +66,15 @@ LEFT JOIN t_detail_commande dc ON co.idCommande = dc.fkCommande
 LEFT JOIN t_arme arm ON arm.idArme = dc.fkArme
 GROUP BY jo.idJoueur
 
+SELECT jo.idJoueur, dc.detQuantiteCommande
+FROM t_joueur jo
+LEFT JOIN t_commande co ON jo.idJoueur = co.fkJoueur
+LEFT JOIN t_detail_commande dc ON co.idCommande = dc.fkCommande
+GROUP BY jo.idJoueur
+
+SELECT jo.idJoueur, COUNT(DISTINCT dc.fkArme) AS nmbrTypedArmes
+FROM t_joueur jo
+LEFT JOIN t_commande co ON jo.idJoueur = co.fkJoueur
+LEFT JOIN t_detail_commande dc ON co.idCommande = dc.fkCommande
+GROUP BY jo.idJoueur
+having nmbrtypedArmes > 3
