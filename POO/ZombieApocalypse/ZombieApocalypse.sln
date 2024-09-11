@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZombieApocalypse", "ZombieApocalypse\ZombieApocalypse.csproj", "{177C4113-6EA9-4396-B8D6-A17FE8628B84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZombieApocalypse", "ZombieApocalypse\ZombieApocalypse.csproj", "{0C0389C2-0162-4656-8A60-2D7BEEF4EE4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{177C4113-6EA9-4396-B8D6-A17FE8628B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{177C4113-6EA9-4396-B8D6-A17FE8628B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{177C4113-6EA9-4396-B8D6-A17FE8628B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{177C4113-6EA9-4396-B8D6-A17FE8628B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0389C2-0162-4656-8A60-2D7BEEF4EE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0389C2-0162-4656-8A60-2D7BEEF4EE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0389C2-0162-4656-8A60-2D7BEEF4EE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0389C2-0162-4656-8A60-2D7BEEF4EE4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9F46B988-6797-427C-B9C0-F03195A14071}
+		SolutionGuid = {B5475C49-DC9C-4A60-8AAD-93A80B273F83}
 	EndGlobalSection
 EndGlobal
