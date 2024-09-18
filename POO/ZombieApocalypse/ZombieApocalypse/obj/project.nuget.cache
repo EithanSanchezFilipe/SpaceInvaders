@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "npPzNsMgUnh1gRr306+igRfDNHWZBQfwSFe6KM7Xsbi3snysZz+AzuWreGQX6MQh4EabFzGoz9RcPTYr2lr9QA==",
+  "dgSpecHash": "ieXaNbTXXLftek6qRGkXPVcMw27jhCtHsMr8vJUXZEl6Mruql2RmyPTNiwpBGh6FDcp0BpHkaI+HahJLmo4zPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pa78gum\\Desktop\\ZombieApocalypse\\ZombieApocalypse\\ZombieApocalypse.csproj",
+  "projectFilePath": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombieApocalypse\\ZombieApocalypse\\ZombieApocalypse.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pa78gum\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

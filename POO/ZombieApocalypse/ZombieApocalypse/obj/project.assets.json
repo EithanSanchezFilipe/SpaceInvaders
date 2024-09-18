@@ -7252,11 +7252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pa78gum\\Desktop\\ZombieApocalypse\\ZombieApocalypse\\ZombieApocalypse.csproj",
+      "projectUniqueName": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombieApocalypse\\ZombieApocalypse\\ZombieApocalypse.csproj",
       "projectName": "ZombieApocalypse",
-      "projectPath": "C:\\Users\\pa78gum\\Desktop\\ZombieApocalypse\\ZombieApocalypse\\ZombieApocalypse.csproj",
+      "projectPath": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombieApocalypse\\ZombieApocalypse\\ZombieApocalypse.csproj",
       "packagesPath": "C:\\Users\\pa78gum\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pa78gum\\Desktop\\ZombieApocalypse\\ZombieApocalypse\\obj\\",
+      "outputPath": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombieApocalypse\\ZombieApocalypse\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 using System.Collections.Generic;
 
 namespace ZombieApocalypse
@@ -15,8 +14,8 @@ namespace ZombieApocalypse
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferWidth = 700;
-            _graphics.PreferredBackBufferHeight = 900;
+            _graphics.PreferredBackBufferWidth = GlobalHelpers.screenWidth;
+            _graphics.PreferredBackBufferHeight = GlobalHelpers.screenHeight;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -24,10 +23,10 @@ namespace ZombieApocalypse
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _soldat = new Player(this, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+            _soldat = new Player(this, Components);
             Components.Add(_soldat);
-            for(int i = 0; i < 6; i++)
-                _zombies.Add(new Zombie(this, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight, _soldat));
+            for (int i = 0; i < 6; i++)
+                _zombies.Add(new Zombie(this));
             foreach (var zombie in _zombies)
                 Components.Add(zombie);
 
@@ -45,8 +44,19 @@ namespace ZombieApocalypse
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            // TODO: Add your update logic here
+            List<Zombie> zombiesToRemove = new List<Zombie>();
+            foreach (var zombie in _zombies)
+            {
+                if (zombie.IsDead)
+                {
+                    zombiesToRemove.Add(zombie);
+                }
+            }
+            foreach (var zombie in zombiesToRemove)
+            {
+                _zombies.Remove(zombie);
+                Components.Remove(zombie);
+            }
 
             base.Update(gameTime);
         }
