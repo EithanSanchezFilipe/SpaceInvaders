@@ -7,6 +7,7 @@ namespace ZombieApocalypse
 {
     public class Player : DrawableGameComponent
     {
+        public int Health;
         private Texture2D normalTexture;            //Déclaration d'une variable pour la texture de mon personnage en attaque normale
         private Texture2D specialTexture;            //Déclaration d'une variable pour la texture de mon personnage en attaque normale
         private float _playerSpeed;                 //Déclaration d'une variable pour la vitesse de mon personnage
@@ -29,6 +30,7 @@ namespace ZombieApocalypse
             _playerSpeed = 250f;
             _Components = Components;
             _mainGame = game;
+            Health = GlobalHelpers.RandomNumber(14, 21);
         }
 
         //Method qui charge les images(ne l'affiche pas)
@@ -64,7 +66,7 @@ namespace ZombieApocalypse
             }
             if (kstate.IsKeyDown(Keys.Space) && _timeSinceLastBullet >= _bulletCooldown)
             {
-                Bullet bullet = new Bullet(_mainGame, _position);
+                Bullet bullet = new Bullet(_mainGame, _position, normalTexture.Width, specialTexture.Height);
                 Bullets.Add(bullet);
                 _Components.Add(bullet);
                 _timeSinceLastBullet = 0f;

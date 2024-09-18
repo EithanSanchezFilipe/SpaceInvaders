@@ -6,10 +6,10 @@ namespace ZombieApocalypse
 {
     public class Zombie : DrawableGameComponent
     {
-        private Texture2D texture;
+        public Texture2D texture;
         private Texture2D texture2;
         private SpriteBatch _spriteBatch;
-        public Vector2 _position;
+        public Vector2 _position { get; private set; }
         private int[] _spawnX = { 95, 220, 330, 440, 550 };
         private int[] _spawnY = { -100, -260, -300, -350, -170, -420 };
         public bool isDespawning = false;

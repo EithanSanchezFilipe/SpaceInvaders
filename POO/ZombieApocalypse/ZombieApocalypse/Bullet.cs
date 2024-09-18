@@ -11,17 +11,22 @@ namespace ZombieApocalypse
         public Vector2 _position;
         private int _screenHeight;
         private int _screenWidth;
-        public Bullet(Game game, Vector2 Position) : base(game)
+        private int _characterTextureWidth;
+        private int _characterTextureHeight;
+        public Bullet(Game game, Vector2 Position, int characterTextureWidth, int characterTextureHeight) : base(game)
         {
-            _position.X = Position.X + 18;
-            _position.Y = Position.Y - Position.Y /15;
+            _position.X = Position.X;
+            _position.Y = Position.Y;
+            _characterTextureWidth = characterTextureWidth;
+            _characterTextureHeight = characterTextureHeight;
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Game.Content.Load<Texture2D>("pistolBullet");
-            texture2 = Game.Content.Load<Texture2D>("bloodSplatter");
+            _position.X += (_characterTextureWidth * 0.4f)/ 4 -3;
+            _position.Y -= (_characterTextureHeight * 0.4f) / 2 + 15;
         }
 
         public override void Update(GameTime gameTime)
