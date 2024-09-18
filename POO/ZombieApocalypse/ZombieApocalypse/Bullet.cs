@@ -8,7 +8,7 @@ namespace ZombieApocalypse
         private Texture2D texture;
         private Texture2D texture2;
         private SpriteBatch _spriteBatch;
-        private Vector2 _position;
+        public Vector2 _position;
         private int _screenHeight;
         private int _screenWidth;
         public Bullet(Game game, Vector2 Position) : base(game)

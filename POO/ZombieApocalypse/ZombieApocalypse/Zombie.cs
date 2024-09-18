@@ -9,13 +9,14 @@ namespace ZombieApocalypse
         private Texture2D texture;
         private Texture2D texture2;
         private SpriteBatch _spriteBatch;
-        private Vector2 _position;
+        public Vector2 _position;
         private int[] _spawnX = { 95, 220, 330, 440, 550 };
         private int[] _spawnY = { -100, -260, -300, -350, -170, -420 };
-        private bool isDespawning = false;
+        public bool isDespawning = false;
         private float _opacity = 1f;
         private float _opacityRate = 0.5f;
         public bool IsDead { get; private set; } = false;
+
         public Zombie(Game game) : base(game)
         {
             int spawnXIndex = GlobalHelpers.RandomNumber(0, _spawnX.Length);
@@ -34,7 +35,7 @@ namespace ZombieApocalypse
         {
             
             base.Update(gameTime);
-            if (!(_position.Y == (GlobalHelpers.screenHeight - GlobalHelpers.screenHeight / 5)))
+            if (!(_position.Y == (GlobalHelpers.screenHeight - GlobalHelpers.screenHeight / 5)) && !isDespawning)
                 _position.Y += 1;
             else
                 isDespawning = true;
@@ -50,7 +51,6 @@ namespace ZombieApocalypse
 
         public override void Draw(GameTime gameTime)
         {
-            Console.WriteLine($"Drawing Zombie at {_position} with opacity {_opacity}"); // Debugging line
             Color colorWithOpacity = new Color(1f, 1f, 1f, _opacity);
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 

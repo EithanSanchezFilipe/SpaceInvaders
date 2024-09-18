@@ -19,6 +19,7 @@ namespace ZombieApocalypse
         private float _timeSinceLastBullet = 0f;
         private Game _mainGame;
         private GameComponentCollection _Components;
+        public List<Bullet> Bullets = new List<Bullet>();
         public Vector2 Position { get => _position; set => _position = value; }
 
         //Constructeur de la classe Player
@@ -63,7 +64,8 @@ namespace ZombieApocalypse
             }
             if (kstate.IsKeyDown(Keys.Space) && _timeSinceLastBullet >= _bulletCooldown)
             {
-                Bullet bullet = new Bullet(_mainGame ,_position);
+                Bullet bullet = new Bullet(_mainGame, _position);
+                Bullets.Add(bullet);
                 _Components.Add(bullet);
                 _timeSinceLastBullet = 0f;
             }

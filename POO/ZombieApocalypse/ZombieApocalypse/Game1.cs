@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System;
 
 namespace ZombieApocalypse
 {
@@ -45,12 +46,27 @@ namespace ZombieApocalypse
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             List<Zombie> zombiesToRemove = new List<Zombie>();
+            List<Bullet> BulletsToRemove = new List<Bullet>();
             foreach (var zombie in _zombies)
             {
                 if (zombie.IsDead)
                 {
                     zombiesToRemove.Add(zombie);
                 }
+                foreach(var bullet in _soldat.Bullets)
+                {
+                    if(!zombie.isDespawning == true && bullet._position.Y < zombie._position.Y && bullet._position.X > zombie._position.X - (zombie._position.X / 9) - 8 && bullet._position.X < zombie._position.X + (zombie._position.X / 5) + 8)
+                    {
+                        Console.Write("Collision balle zombie");
+                        zombie.isDespawning = true;
+                        BulletsToRemove.Add(bullet);
+                    }
+                }
+            }
+            foreach (Bullet Bullet in BulletsToRemove)
+            {
+                _soldat.Bullets.Remove(Bullet);
+                Components.Remove(Bullet);
             }
             foreach (var zombie in zombiesToRemove)
             {
