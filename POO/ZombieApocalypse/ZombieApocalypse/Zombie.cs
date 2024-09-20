@@ -9,7 +9,7 @@ namespace ZombieApocalypse
         public Texture2D texture;
         private Texture2D texture2;
         private SpriteBatch _spriteBatch;
-        public Vector2 _position { get; private set; }
+        public Vector2 Position { get; private set; }
         private int[] _spawnX = { 95, 220, 330, 440, 550 };
         private int[] _spawnY = { -100, -260, -300, -350, -170, -420 };
         public bool isDespawning = false;
@@ -21,7 +21,7 @@ namespace ZombieApocalypse
         {
             int spawnXIndex = GlobalHelpers.RandomNumber(0, _spawnX.Length);
             int spawnYIndex = GlobalHelpers.RandomNumber(0, _spawnY.Length);
-            _position = new Vector2(_spawnX[spawnXIndex], _spawnY[spawnYIndex]);
+            Position = new Vector2(_spawnX[spawnXIndex], _spawnY[spawnYIndex]);
         }
 
         protected override void LoadContent()
@@ -35,8 +35,8 @@ namespace ZombieApocalypse
         {
             
             base.Update(gameTime);
-            if (!(_position.Y == (GlobalHelpers.screenHeight - GlobalHelpers.screenHeight / 5)) && !isDespawning)
-                _position.Y += 1;
+            if (!(Position.Y == (GlobalHelpers.screenHeight - GlobalHelpers.screenHeight / 5)) && !isDespawning)
+                Position = new Vector2(Position.X, Position.Y + 1);
             else
                 isDespawning = true;
 
@@ -55,9 +55,9 @@ namespace ZombieApocalypse
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
             if(!isDespawning)
-                _spriteBatch.Draw(texture, _position, null, Color.White, 0f, new Vector2(texture.Width / 2, texture.Height / 2), 0.4f, SpriteEffects.None, 0f);
+                _spriteBatch.Draw(texture, Position, null, Color.White, 0f, new Vector2(texture.Width / 2, texture.Height / 2), 0.4f, SpriteEffects.None, 0f);
             else
-                _spriteBatch.Draw(texture2, _position, null, colorWithOpacity, 0f, new Vector2(texture.Width / 2, texture.Height / 2), 0.4f, SpriteEffects.None, 0f);
+                _spriteBatch.Draw(texture2, Position, null, colorWithOpacity, 0f, new Vector2(texture.Width / 2, texture.Height / 2), 0.4f, SpriteEffects.None, 0f);
             _spriteBatch.End();
             base.Draw(gameTime);
         }

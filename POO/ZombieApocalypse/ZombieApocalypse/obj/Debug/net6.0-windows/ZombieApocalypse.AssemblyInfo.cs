@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZombieApocalypse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1ba1828cd4fdbda2a4766c556d6a2ff133032f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZombieApocalypse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZombieApocalypse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

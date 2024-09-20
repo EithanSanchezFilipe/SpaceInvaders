@@ -53,11 +53,11 @@ namespace ZombieApocalypse
                 {
                     zombiesToRemove.Add(zombie);
                 }
-                foreach(var bullet in _soldat.Bullets)
+                foreach(Bullet bullet in _soldat.Bullets)
                 {
-                    if(!zombie.isDespawning == true && bullet._position.Y < zombie._position.Y && bullet._position.X > zombie._position.X - (zombie.texture.Width * 0.4f) / 2 && bullet._position.X < zombie._position.X + (zombie.texture.Width * 0.4f) / 2)
+                    if(!zombie.isDespawning && bullet.Position.Y < zombie.Position.Y + (zombie.texture.Height * 0.4f) / 2 && bullet.Position.X > zombie.Position.X - (zombie.texture.Width * 0.4f) / 2 && bullet.Position.X < zombie.Position.X + (zombie.texture.Width * 0.4f) / 2)
                     {
-                        Console.WriteLine($"Collision balle zombie { bullet._position} {zombie._position} {zombie._position.X - zombie.texture.Width / 2}   {zombie._position.X + zombie.texture.Width / 2}");
+                        Console.WriteLine($"Collision balle zombie { bullet.Position} {zombie.Position} {zombie.Position.X - zombie.texture.Width / 2}   {zombie.Position.X + zombie.texture.Width / 2}");
                         zombie.isDespawning = true;
                         BulletsToRemove.Add(bullet);
                     }
