@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/pa78gum/Documents/GitHub/SpaceInvaders/POO/ZombieApocalypse/ZombieApocalypse/Content/zombie.png</SourceFile>
+  <SourceFile>C:/Users/pa78gum/Documents/GitHub/SpaceInvaders/POO/ZombieApocalypse/ZombieApocalypse/Content/bloodSplatter.png</SourceFile>
   <SourceTime>2024-09-20T08:41:34.3930458+02:00</SourceTime>
-  <DestFile>C:/Users/pa78gum/Documents/GitHub/SpaceInvaders/POO/ZombieApocalypse/ZombieApocalypse/Content/bin/Windows/Content/zombie.xnb</DestFile>
-  <DestTime>2024-09-20T08:42:49.7673604+02:00</DestTime>
+  <DestFile>C:/Users/pa78gum/Documents/GitHub/SpaceInvaders/POO/ZombieApocalypse/ZombieApocalypse/Content/bin/Windows/Content/bloodSplatter.xnb</DestFile>
+  <DestTime>2024-09-20T08:42:49.7433945+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
