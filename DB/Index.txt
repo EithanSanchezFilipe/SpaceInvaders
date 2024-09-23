@@ -1,0 +1,23 @@
+En étudiant le dump MySQL db_space_invaders.sql vous constaterez que vous ne trouvez
+pas le mot clé INDEX.
+
+1. Pourtant certains index existent déjà. Pourquoi ?
+Lors de la création/importation d'une base de données les clé primaires et étrangeres définissent déjà les index donc même si le mot index
+n'apparait pas dansle dump sql, les index sont présents grâce a ça
+
+2. Quels sont les avantages et les inconvénients des index ?
+Avantages:
+	-ça améliore les performances car il sait déjà ou chercher si on fait une recherche par clé
+	-Les jointures entre tables peuvent être plus rapides si les colonnes utilisées pour les jointures sont indexées
+	-Les index facilitent le tri des résultats lors des requêtes
+
+Désavantages:
+	-Les index prennent de l'espace supplémentaire sur le disque
+	-Chaque modification d'une ligne nécessite également la mise à jour des index associés
+	-La gestion des index peut devenir complexe
+
+3. Sur quel champ (de quelle table), cela pourrait être pertinent d’ajouter un index ?
+Justifier votre réponse.
+Il est pertinent de l'utiliser dans une table ou la clé primaire est beaucoup utilisé dans les clauses Join, Where, Order by.
+Imaginon une table joueur ou la clé primaire est très utilisé il serait donc préferable un index pour reduire le temps pour trouver les
+lignes car le temps est crucial pour les application à fort trafic 

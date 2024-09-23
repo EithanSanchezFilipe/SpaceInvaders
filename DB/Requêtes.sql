@@ -93,9 +93,9 @@ SELECT
 FROM 
     t_joueur jo -- De la table joueur
 LEFT JOIN 
-    t_commande co ON jo.idJoueur = co.fkJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_commande co ON jo.idJoueur = co.fkJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 LEFT JOIN 
-    t_detail_commande dc ON co.idCommande = dc.fkCommande; -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_detail_commande dc ON co.idCommande = dc.fkCommande; -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 
 /*Requête numéro 8 : Récupérer toutes les commandes et afficher le pseudo du joueur s’il existe, sinon afficher
 `NULL` pour le pseudo.*/
@@ -106,7 +106,7 @@ SELECT
 FROM 
     t_commande co -- De la table commande
 LEFT JOIN 
-    t_joueur jo ON co.fkJoueur = jo.idJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_joueur jo ON co.fkJoueur = jo.idJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 
 /*Requête numéro 9 : Trouver le nombre total d'armes achetées par chaque joueur (même si ce joueur n'a 
 acheté aucune arme).*/
@@ -117,11 +117,11 @@ SELECT
 FROM 
     t_joueur jo -- De la table joueur
 LEFT JOIN 
-    t_commande co ON jo.idJoueur = co.fkJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_commande co ON jo.idJoueur = co.fkJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 LEFT JOIN 
-    t_detail_commande dc ON co.idCommande = dc.fkCommande -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_detail_commande dc ON co.idCommande = dc.fkCommande -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 LEFT JOIN 
-    t_arme arm ON arm.idArme = dc.fkArme -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_arme arm ON arm.idArme = dc.fkArme -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 GROUP BY 
     jo.idJoueur -- Groupe la réponse par joueur
 
@@ -133,9 +133,9 @@ SELECT
 FROM 
     t_joueur jo -- De la table joueur
 LEFT JOIN 
-    t_commande co ON jo.idJoueur = co.fkJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_commande co ON jo.idJoueur = co.fkJoueur -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 LEFT JOIN 
-    t_detail_commande dc ON co.idCommande = dc.fkCommande -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune
+    t_detail_commande dc ON co.idCommande = dc.fkCommande -- Combine des lignes de deux ou plusieurs tables en utilisant une condition commune (Il prends les valeurs de A et de A + B)
 GROUP BY 
     jo.idJoueur -- Groupe la réponse par joueur
 HAVING 
