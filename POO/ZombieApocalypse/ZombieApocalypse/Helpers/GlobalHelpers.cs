@@ -14,7 +14,6 @@ namespace ZombieApocalypse.Helpers
         {
             Random rnd = new Random();
             int NmbrAleatoire = rnd.Next(Min, Max);
-            Console.WriteLine(NmbrAleatoire);
             return NmbrAleatoire;
         }
     }

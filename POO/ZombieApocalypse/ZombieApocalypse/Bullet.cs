@@ -24,7 +24,6 @@ namespace ZombieApocalypse
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Game.Content.Load<Texture2D>("pistolBullet");
             Position = new Vector2(Position.X + (_characterTextureWidth * 0.4f) / 2 - 20, Position.Y - (_characterTextureHeight * 0.4f) / 2 - 10);
-            Console.WriteLine(Position);
         }
 
         public override void Update(GameTime gameTime)

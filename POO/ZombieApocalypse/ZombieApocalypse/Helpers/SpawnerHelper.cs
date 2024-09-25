@@ -10,7 +10,7 @@ namespace ZombieApocalypse.Helpers
     static class SpawnerHelper
     {
         private const int MINSPAWNDISTANCE = 100;
-        public static void SpawnZombie(Game GameRoot, List<Zombie> zombies, GameComponentCollection Components)
+        public static List<Zombie> SpawnZombie(Game GameRoot, List<Zombie> zombies, GameComponentCollection Components)
         {
             Vector2 spawnPosition = Vector2.Zero;
             bool isValidPosition = false;
@@ -29,6 +29,7 @@ namespace ZombieApocalypse.Helpers
             Zombie newZombie = new Zombie(GameRoot, spawnPosition);
             zombies.Add(newZombie);
             Components.Add(newZombie);
+            return zombies;
         }
 
         private static bool CheckIfZombiesAreFarEnough(Vector2 spawnPosition, List<Zombie> zombies)

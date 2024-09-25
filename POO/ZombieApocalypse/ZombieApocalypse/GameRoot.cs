@@ -14,10 +14,8 @@ namespace ZombieApocalypse
         private Player _soldat;
         private List<Zombie> _zombies = new List<Zombie>();
         private float _zombieSpawnTimer;
-        private float _zombieSpawnInterval;
-        private int _maxZombies = 10;
-        private int _level;
-
+        private Level _level;
+        public static int NumberOfZombie = 0;
         public GameRoot()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -25,10 +23,8 @@ namespace ZombieApocalypse
             _graphics.PreferredBackBufferHeight = GlobalHelpers.screenHeight;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-
-
-            _zombieSpawnInterval = 0.3f;
             _zombieSpawnTimer = 0;
+            _level = new Level(this);
         }
 
         protected override void Initialize()
@@ -53,11 +49,12 @@ namespace ZombieApocalypse
 
             _zombieSpawnTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-
-            if (_zombieSpawnTimer >= _zombieSpawnInterval && _zombies.Count < _maxZombies)
+            if (_zombieSpawnTimer >= _level.SpawnInterval && NumberOfZombie < _level.ZombiesToSpawn)
             {
+                Console.WriteLine(_level.CurrentLevel + " " + NumberOfZombie + " " + _level.ZombiesToSpawn);
                 SpawnerHelper.SpawnZombie(this, _zombies, Components);
                 _zombieSpawnTimer = 0;
+                NumberOfZombie++;
             }
 
             foreach (Zombie zombie in _zombies.ToArray())
@@ -66,6 +63,7 @@ namespace ZombieApocalypse
                 {
                     Components.Remove(zombie);
                     _zombies.Remove(zombie);
+                    _level.ZombieDefeated();
                 }
                 else
                 {
@@ -81,7 +79,6 @@ namespace ZombieApocalypse
                     _soldat.Bullets.Remove(bullet);
                 }
             }
-
             base.Update(gameTime);
         }
 
