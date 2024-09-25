@@ -1,3 +1,3 @@
 ﻿
-using var game = new ZombieApocalypse.Game1();
+using var game = new ZombieApocalypse.GameRoot();
 game.Run();
