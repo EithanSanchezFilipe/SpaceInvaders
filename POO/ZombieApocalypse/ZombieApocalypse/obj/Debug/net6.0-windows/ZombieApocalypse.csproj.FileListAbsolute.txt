@@ -79,5 +79,4 @@ C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApoca
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApocalypse\obj\Debug\net6.0-windows\ref\ZombieApocalypse.dll
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApocalypse\bin\Debug\net6.0-windows\Content\bloodSplatter.xnb
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApocalypse\bin\Debug\net6.0-windows\Content\pistolBullet.xnb
-C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApocalypse\obj\Debug\net6.0-windows\ZombieApocalypse.sourcelink.json
-C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApocalypse\obj\Debug\net6.0-windows\ZombieAp.D278496D.Up2Date
+C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombieApocalypse\ZombieApocalypse\obj\Debug\net6.0-windows\ZombieApocalypse.csproj.CopyComplete

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using ZombieApocalypse.Helpers;
 
 namespace ZombieApocalypse
 {
@@ -10,18 +11,14 @@ namespace ZombieApocalypse
         private Texture2D texture2;
         private SpriteBatch _spriteBatch;
         public Vector2 Position { get; private set; }
-        private int[] _spawnX = { 95, 220, 330, 440, 550 };
-        private int[] _spawnY = { -100, -260, -300, -350, -170, -420 };
         public bool isDespawning = false;
         private float _opacity = 1f;
         private float _opacityRate = 0.5f;
         public bool IsDead { get; private set; } = false;
 
-        public Zombie(Game game) : base(game)
+        public Zombie(Game game, Vector2 position) : base(game)
         {
-            int spawnXIndex = GlobalHelpers.RandomNumber(0, _spawnX.Length);
-            int spawnYIndex = GlobalHelpers.RandomNumber(0, _spawnY.Length);
-            Position = new Vector2(_spawnX[spawnXIndex], _spawnY[spawnYIndex]);
+            Position = position;
         }
 
         protected override void LoadContent()

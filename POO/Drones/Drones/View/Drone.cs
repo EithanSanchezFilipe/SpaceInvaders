@@ -6,7 +6,8 @@ namespace Drones
     public partial class Drone
     {
         private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
-        private Image droneImage; // Champ pour stocker l'image du drone
+        private Image droneImage; // Champ pour stocker l'image du droneprivate 
+
 
         // Méthode pour charger l'image du drone (à appeler manuellement après création du drone)
         public void LoadDroneImage()
@@ -14,7 +15,8 @@ namespace Drones
             try
             {
                 // Charger l'image du drone depuis un fichier (imagePath fourni en argument)
-                droneImage = Image.FromFile("../Model/Vaisseau.png");
+                droneImage = Image.FromFile("C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\zombie.png");
+                Console.WriteLine("image loaded");
             }
             catch (Exception ex)
             {
@@ -27,19 +29,13 @@ namespace Drones
         // Méthode de rendu graphique
         public void Render(BufferedGraphics drawingSpace)
         {
-            if (droneImage != null)
-            {
+
+                Console.WriteLine("image loaded");
                 // Dessiner l'image du drone centrée sur la position (X, Y)
                 drawingSpace.Graphics.DrawImage(droneImage, X - droneImage.Width / 2, Y - droneImage.Height / 2);
-            }
-            else
-            {
-                // Si l'image n'est pas disponible, dessiner l'ellipse comme avant
-                drawingSpace.Graphics.DrawEllipse(droneBrush, new Rectangle(X - 4, Y - 2, 8, 8));
-            }
+
 
             // Dessiner le texte avec le nom et le pourcentage de charge
-            drawingSpace.Graphics.DrawString($"{this}", TextHelpers.drawFont, TextHelpers.writingBrush, X + 5, Y - 5);
         }
     }
 }

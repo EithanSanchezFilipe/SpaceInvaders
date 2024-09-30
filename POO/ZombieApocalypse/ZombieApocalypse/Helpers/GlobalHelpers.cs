@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZombieApocalypse
+namespace ZombieApocalypse.Helpers
 {
     public class GlobalHelpers
     {
@@ -14,7 +14,6 @@ namespace ZombieApocalypse
         {
             Random rnd = new Random();
             int NmbrAleatoire = rnd.Next(Min, Max);
-            Console.WriteLine(NmbrAleatoire);
             return NmbrAleatoire;
         }
     }

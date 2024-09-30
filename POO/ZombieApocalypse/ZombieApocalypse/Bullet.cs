@@ -8,15 +8,13 @@ namespace ZombieApocalypse
         private Texture2D texture;
         private Texture2D texture2;
         private SpriteBatch _spriteBatch;
-        private int _screenHeight;
-        private int _screenWidth;
         private int _characterTextureWidth;
         private int _characterTextureHeight;
+        public bool IsRemoved;
         public Vector2 Position { get; private set; }
-        public Bullet(Game game, Vector2 Position, int characterTextureWidth, int characterTextureHeight) : base(game)
+        public Bullet(Game game, Vector2 position, int characterTextureWidth, int characterTextureHeight) : base(game)
         {
-            this.Position = new Vector2(Position.X, Position.Y);
-
+            Position = position;
             _characterTextureWidth = characterTextureWidth;
             _characterTextureHeight = characterTextureHeight;
         }
@@ -25,12 +23,12 @@ namespace ZombieApocalypse
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Game.Content.Load<Texture2D>("pistolBullet");
-            Position = new Vector2((_characterTextureWidth * 0.4f) / 4 - 3, (_characterTextureHeight * 0.4f) / 2 + 15);
+            Position = new Vector2(Position.X + (_characterTextureWidth * 0.4f) / 2 - 20, Position.Y - (_characterTextureHeight * 0.4f) / 2 - 10);
         }
 
         public override void Update(GameTime gameTime)
         {
-            Position = new Vector2(Position.X, Position.Y -10);
+            Position = new Vector2(Position.X, Position.Y - 10);
             base.Update(gameTime);
         }
 
