@@ -1,18 +1,29 @@
 
-Commande pour faire un backup
+////////////////Commande pour faire un backup\\\\\\\\\\\\\\\\\\\\\
 docker exec -i db mysqldump -uroot -proot db_space_invaders > ./db_space_invaders_backup.sql
 
--docker exec -i "db utilise docker pour effectuer la commande dans le conteneur db"
+docker exec -i "db" 
+utilise docker pour effectuer la commande dans le conteneur db
 
--mysqldump -uroot -proot db_space_invaders "utilise mysqldump pour créer un backup de la base de données space_invaders"
 
--./db_space_invaders_backup.sql "chemin pour la sortie du fichier" 
+mysqldump -uroot -proot db_space_invaders
+utilise mysqldump pour créer un backup de la base de données space_invaders
 
-Commande pour faire un restore 
+
+./db_space_invaders_backup.sql 
+chemin pour la sortie du fichier
+
+
+///////////////Commande pour faire un restore\\\\\\\\\\\\\\\\\\\\\\\ 
 docker exec -i db mysql -uroot -proot < ./db_space_invaders_backup.sql
 
--docker exec -i "db utilise docker pour effectuer la commande dans le conteneur db"
 
--mysql -uroot -proot "utilise mysql pour importer un fichier de backup"
+docker exec -i "db"
+utilise docker pour effectuer la commande dans le conteneur db
 
--./db_space_invaders_backup.sql "chemin pour l'entrée du fichier" 
+mysql -u root -proot
+utilise mysql pour importer un fichier de backup
+
+
+./db_space_invaders_backup.sql
+chemin pour l'entrée du fichier"
