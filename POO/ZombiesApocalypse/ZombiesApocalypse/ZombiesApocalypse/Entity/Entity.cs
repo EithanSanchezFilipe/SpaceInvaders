@@ -12,33 +12,29 @@ namespace ZombiesApocalypse
         protected Vector2 Velocity;
         protected int Speed;
 
+        public bool Destroyed;
+        public Rectangle Hitbox;
         public Vector2 Position;
         public int Health;
 
         private SpriteBatch _spriteBatch;
 
-        public Entity(GraphicsDevice graphicsDevice)
+        public Entity()
         {
-            Position = new Vector2(50, 100);
-            TintColor = Color.White;
-            _spriteBatch = new SpriteBatch(graphicsDevice);
         }
 
         public abstract void LoadContent();
         public abstract void Update(GameTime time);
 
-        public void Draw()
+        public void Draw(SpriteBatch spriteBatch)
         {
             if (EntityTexture != null)
             {
-                _spriteBatch.Begin();
-                _spriteBatch.Draw(EntityTexture, Position, null, TintColor);
-                _spriteBatch.End();
-                Console.WriteLine("Entity drawn");
+                spriteBatch.Draw(EntityTexture, Position, null, TintColor);
             }
             else
             {
-                Console.WriteLine("Entity texture is null!");
+                Console.WriteLine("Entity texture is null!" + this.GetType());
             }
         }
     }
