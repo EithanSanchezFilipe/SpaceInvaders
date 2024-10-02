@@ -7,18 +7,18 @@ namespace ZombiesApocalypse
 {
     static class EntityManager
     {
-        static List<Entity> Entities = new List<Entity>();
-
+        public static List<Entity> Entities = new List<Entity>();
         // Modified to include GraphicsDevice and ContentManager
         public static void Add(Entity entity)
         {
             Entities.Add(entity);
+            entity.LoadContent();
         }
 
 
         public static void LoadContent()
         {
-            Console.WriteLine($"Total Entities: {Entities.Count}");
+
             foreach (Entity entity in Entities)
             {
                 entity.LoadContent();
@@ -26,20 +26,69 @@ namespace ZombiesApocalypse
         }
 
 
-        public static void Update(GameTime time)
+        public static void Update(GameTime time, Level level)
+        {
+            if (level.NumberOfZombies == 0)
+            {
+                level.SpawnZombie();
+            }
+
+            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
+            foreach (Entity entity in Entities.ToArray())
+            {
+                entity.Update(time);
+                if(entity.Health <= 0)
+                    entity.Destroyed = true;
+            }
+
+            //Appelle d'une methode qui verifie si il y a des collision entre les balles et les zombies
+            CollisionBulletZombie();
+            
+            //Appele d'une methode qui efface toutes les entités mortes
+            DeleteEntities();
+        }
+
+        public static void Draw(SpriteBatch spriteBatch)
         {
             foreach (Entity entity in Entities)
             {
-                entity.Update(time);
+                entity.Draw(spriteBatch);
             }
         }
 
-        public static void Draw()
+        private static void DeleteEntities()
         {
-            foreach (Entity entity in Entities)
+            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
+            foreach (Entity entity in Entities.ToArray())
             {
-                entity.Draw();
-                Console.WriteLine("Drawn");
+                if(entity.Destroyed)
+                    Entities.Remove(entity);
+            }
+        }
+        private static void CollisionBulletZombie()
+        {
+            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
+            foreach (Entity bullet in Entities.ToArray())
+            {
+                //prends que les balles en compte
+                if (bullet is Bullet)
+                {
+                    //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
+                    foreach (Entity zombie in Entities.ToArray())
+                    {
+                        //prends que les zombies en compte
+                        if (zombie is Ennemy)
+                        {
+                            //verifie la collision
+                            if (bullet.Hitbox.Intersects(zombie.Hitbox) && !bullet.Destroyed)
+                            {
+                                bullet.Destroyed = true;
+                                ((Ennemy)zombie).TakeDamage();
+                                Console.WriteLine("collision");
+                            }
+                        }
+                    }
+                }
             }
         }
     }
