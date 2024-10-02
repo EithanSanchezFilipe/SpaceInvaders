@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using ZombiesApocalypse.Helpers;
 
 namespace ZombiesApocalypse
 {
@@ -8,26 +9,28 @@ namespace ZombiesApocalypse
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Player _player;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.PreferredBackBufferWidth = GlobalHelpers.SCREENWIDTH;
+            _graphics.PreferredBackBufferHeight = GlobalHelpers.SCREENHEIGHT;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            _player = new Player(this, GraphicsDevice);
+            
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            EntityManager.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
@@ -35,18 +38,16 @@ namespace ZombiesApocalypse
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
+            EntityManager.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            EntityManager.Draw();
             base.Draw(gameTime);
         }
     }
+
 }

@@ -10,5 +10,12 @@ namespace ZombiesApocalypse.Helpers
     {
         public static int SCREENHEIGHT = 900;
         public static int SCREENWIDTH = 700;
+
+        public static int RandomNumber(int Min, int Max)
+        {
+            Random rnd = new Random();
+            int NmbrAleatoire = rnd.Next(Min, Max);
+            return NmbrAleatoire;
+        }
     }
 }
