@@ -10,7 +10,7 @@ namespace ZombiesApocalypse
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Player _player;
-
+        private Level _level;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -22,8 +22,8 @@ namespace ZombiesApocalypse
 
         protected override void Initialize()
         {
-            _player = new Player(this, GraphicsDevice);
-            
+            _player = new Player(this);
+            _level = new Level(this);
             base.Initialize();
         }
 
@@ -37,15 +37,18 @@ namespace ZombiesApocalypse
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            EntityManager.Update(gameTime);
+            EntityManager.Update(gameTime, _level);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            EntityManager.Draw();
+            _spriteBatch.Begin();
+
+            EntityManager.Draw(_spriteBatch);
+
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }
