@@ -9,9 +9,10 @@ namespace ZombiesApocalypse
     {
         protected Texture2D EntityTexture;
         protected Color TintColor;
+        protected Vector2 Velocity;
+        protected int Speed;
 
         public Vector2 Position;
-        public Vector2 Velocity;
         public int Health;
 
         private SpriteBatch _spriteBatch;
