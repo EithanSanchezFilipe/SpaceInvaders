@@ -39,3 +39,4 @@ C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApo
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\soldat ak.xnb
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\soldat pistolet.xnb
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\zombie.xnb
+C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\bloodSplatter.xnb
