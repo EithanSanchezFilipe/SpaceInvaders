@@ -47,10 +47,14 @@ namespace ZombiesApocalypse
             //Attaque
             _bulletCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (InputHelper.GetKeyStatus().IsKeyDown(Keys.Space) &&  _bulletCooldown <= 0)
+            if (InputHelper.GetKeyStatus().IsKeyDown(Keys.Space) && _bulletCooldown <= 0)
             {
                 new Bullet(_game, Position);
-                _bulletCooldown = GlobalHelpers.BULLETCOOLDOWN;
+                if (!_specialAttack)
+                    _bulletCooldown = GlobalHelpers.PISTOLCOOLDOWN;
+                else
+                    _bulletCooldown = GlobalHelpers.RIFLECOOLDOWN;
+
             }
 
             //Changement de type d'attaque

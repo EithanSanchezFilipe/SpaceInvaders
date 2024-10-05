@@ -40,3 +40,46 @@ C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApo
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\soldat pistolet.xnb
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\zombie.xnb
 C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\bloodSplatter.xnb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\bloodSplatter.xnb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\pistolBullet.xnb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\soldat ak.xnb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\soldat pistolet.xnb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\zombie.xnb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\ZombiesApocalypse.exe
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\ZombiesApocalypse.deps.json
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\ZombiesApocalypse.runtimeconfig.json
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\ZombiesApocalypse.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\ZombiesApocalypse.pdb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\MonoGame.Framework.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.Direct2D1.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.Direct3D11.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.Direct3D9.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.DXGI.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.Mathematics.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.MediaFoundation.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.XAudio2.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\SharpDX.XInput.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\debian-x64\native\libuv.so
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\fedora-x64\native\libuv.so
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\opensuse-x64\native\libuv.so
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\osx\native\libuv.dylib
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\rhel-x64\native\libuv.so
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\win7-arm\native\libuv.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.csproj.AssemblyReference.cache
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.AssemblyInfoInputs.cache
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.AssemblyInfo.cs
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.csproj.CoreCompileInputs.cache
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.sourcelink.json
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesA.F50C36F9.Up2Date
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\refint\ZombiesApocalypse.dll
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.pdb
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.genruntimeconfig.cache
+Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ref\ZombiesApocalypse.dll

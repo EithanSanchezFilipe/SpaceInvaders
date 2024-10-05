@@ -32,13 +32,14 @@ namespace ZombiesApocalypse
             {
                 level.SpawnZombie();
             }
-
             //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
             foreach (Entity entity in Entities.ToArray())
             {
                 entity.Update(time);
                 if(entity.Health <= 0)
                     entity.Destroyed = true;
+                if (entity is Bullet bullet && bullet.Position.Y < 0)
+                    bullet.Destroyed = true;
             }
 
             //Appelle d'une methode qui verifie si il y a des collision entre les balles et les zombies
