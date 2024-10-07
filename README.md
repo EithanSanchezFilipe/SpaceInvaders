@@ -1,2 +1,2 @@
 # SpaceInvaders
-Ceci est le repos des modules 306, pour les projets
+Eithan Sanchez Filipe Mid2a
