@@ -5,10 +5,13 @@ CREATE ROLE 'Administrateur du jeu';
 GRANT SELECT, UPDATE, CREATE, DELETE ON db_space_invaders.* TO 'Administrateur du jeu' WITH GRANT OPTION;
 
 -- Crée un utilisateur administrateur avec un mot de passe
-CREATE USER 'Administrateur'@'localhost' IDENTIFIED BY 'Admin_Pass';
+CREATE USER 'Administrateur' IDENTIFIED BY 'Admin_Pass';
 
 -- Assigne le rôle d'administrateur du jeu à l'utilisateur
-GRANT 'Administrateur du jeu' TO 'Administrateur'@'localhost';
+GRANT 'Administrateur du jeu' TO 'Administrateur';
+
+-- definie le role admin par defaut
+SET DEFAULT ROLE 'Administrateur du jeu' TO 'Administrateur'
 
 -- Crée un rôle de joueur
 CREATE ROLE 'Joueur';
@@ -19,10 +22,13 @@ GRANT CREATE ON t_commande TO 'Joueur';
 GRANT SELECT ON t_commande TO 'Joueur';
 
 -- Crée un utilisateur joueur avec un mot de passe
-CREATE USER 'Joueur1'@'localhost' IDENTIFIED BY 'Joueur_Pass';
+CREATE USER 'Joueur1' IDENTIFIED BY 'Joueur_Pass';
 
 -- Assigne le rôle de joueur à l'utilisateur
-GRANT 'Joueur' TO 'Joueur1'@'localhost';
+GRANT 'Joueur' TO 'Joueur1';
+
+-- definie le role Joueur par defaut
+SET DEFAULT ROLE 'Joueur1' TO 'Joueur'
 
 -- Crée un rôle de gestionnaire de boutique
 CREATE ROLE 'Gestionnaire de boutique';
@@ -33,10 +39,13 @@ GRANT UPDATE, SELECT, DELETE ON t_arme TO 'Gestionnaire de boutique';
 GRANT SELECT ON t_commande TO 'Gestionnaire de boutique';
 
 -- Crée un utilisateur gestionnaire avec un mot de passe
-CREATE USER 'Gestionnaire'@'localhost' IDENTIFIED BY 'Gestionnaire_Pass';
+CREATE USER 'Gestionnaire' IDENTIFIED BY 'Gestionnaire_Pass';
 
 -- Assigne le rôle de gestionnaire de boutique à l'utilisateur
-GRANT 'Gestionnaire de boutique' TO 'Gestionnaire'@'localhost';
+GRANT 'Gestionnaire de boutique' TO 'Gestionnaire';
+
+-- definie le role Joueur par defaut
+SET DEFAULT ROLE 'Gestionnaire de boutique' TO 'Gestionnaire'
 
 -- Vérifie les privilèges de chaque rôle
 SHOW GRANTS FOR 'Administrateur du jeu';
