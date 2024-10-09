@@ -11,7 +11,7 @@ namespace ZombiesApocalypse
         private Game _game;
         private int _numberOfZombiesToSpawn;
         public int NumberLevel{get; private set;}
-        public int NumberOfZombies { get; private set; }
+        public int NumberOfZombies { get; set; }
 
         public Level(Game game)
         {
@@ -19,6 +19,15 @@ namespace ZombiesApocalypse
             NumberLevel = 0;
             NumberOfZombies = 0;
             _numberOfZombiesToSpawn = 5;
+        }
+        public void addLevel()
+        {
+            NumberLevel++;
+
+            //Calcul pour que le nombre de zombie augemente vite
+            _numberOfZombiesToSpawn = 5 + 4 * NumberLevel;
+
+            Ennemy.Damage++;
         }
 
         public void SpawnZombie()

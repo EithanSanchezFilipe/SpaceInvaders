@@ -8,6 +8,7 @@ namespace ZombiesApocalypse
     class Ennemy : Entity
     {
         private Game _game;
+        public static int Damage;
         public Ennemy(Game game, Vector2 StartPosition) : base()
         {
             Position = StartPosition;
@@ -17,6 +18,7 @@ namespace ZombiesApocalypse
             Speed = 1;
             Health = 20;
             EntityManager.Add(this);
+            Damage = 5;
         }
 
         public override void LoadContent()

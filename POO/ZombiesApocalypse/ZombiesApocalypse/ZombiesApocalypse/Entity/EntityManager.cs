@@ -8,7 +8,7 @@ namespace ZombiesApocalypse
     static class EntityManager
     {
         public static List<Entity> Entities = new List<Entity>();
-        // Modified to include GraphicsDevice and ContentManager
+        private static Level _level;
         public static void Add(Entity entity)
         {
             Entities.Add(entity);
@@ -28,9 +28,11 @@ namespace ZombiesApocalypse
 
         public static void Update(GameTime time, Level level)
         {
-            if (level.NumberOfZombies == 0)
+            _level = level;
+            if (_level.NumberOfZombies == 0)
             {
-                level.SpawnZombie();
+                _level.addLevel();
+                _level.SpawnZombie();
             }
             //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
             foreach (Entity entity in Entities.ToArray())
@@ -47,6 +49,8 @@ namespace ZombiesApocalypse
             
             //Appele d'une methode qui efface toutes les entités mortes
             DeleteEntities();
+
+            Console.WriteLine(_level.NumberOfZombies);
         }
 
         public static void Draw(SpriteBatch spriteBatch)
@@ -62,8 +66,13 @@ namespace ZombiesApocalypse
             //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
             foreach (Entity entity in Entities.ToArray())
             {
-                if(entity.Destroyed)
+                if (entity.Destroyed)
+                {
                     Entities.Remove(entity);
+                    if (entity is Ennemy zombie)
+                        _level.NumberOfZombies--;
+                }
+
             }
         }
         private static void CollisionBulletZombie()
