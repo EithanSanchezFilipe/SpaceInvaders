@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ZombiesApocalypse.Helpers;
+using System.Collections.Generic;
 
 namespace ZombiesApocalypse
 {
@@ -31,6 +32,7 @@ namespace ZombiesApocalypse
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             EntityManager.LoadContent();
+            Text.LoadContent(this);
         }
 
         protected override void Update(GameTime gameTime)
@@ -46,6 +48,7 @@ namespace ZombiesApocalypse
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
 
+            Text.Draw(_spriteBatch);
             EntityManager.Draw(_spriteBatch);
 
             _spriteBatch.End();
