@@ -37,9 +37,9 @@ namespace ZombiesApocalypse
             //Bouge la hitbox au même temps que le zombie
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
         }
-        public void TakeDamage()
+        public void TakeDamage(int Damage)
         {
-            Health -=10;
+            Health -=Damage;
         }
     }
 }

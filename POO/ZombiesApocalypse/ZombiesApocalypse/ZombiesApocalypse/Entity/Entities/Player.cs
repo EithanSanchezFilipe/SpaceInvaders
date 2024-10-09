@@ -12,6 +12,7 @@ namespace ZombiesApocalypse
         private float _bulletCooldown;
         private bool _specialAttack;
         private float _specialAttackCooldown;
+        private int _damage;
         public Player(Game game) : base()
         {
             _game = game;
@@ -19,6 +20,7 @@ namespace ZombiesApocalypse
             Speed = 5;
             Health = 100;
             EntityManager.Add(this);
+            _damage = 7;
         }
 
         public override void LoadContent()
@@ -49,12 +51,17 @@ namespace ZombiesApocalypse
 
             if (InputHelper.GetKeyStatus().IsKeyDown(Keys.Space) && _bulletCooldown <= 0)
             {
-                new Bullet(_game, Position);
+                new Bullet(_game, Position, _damage);
                 if (!_specialAttack)
+                {
                     _bulletCooldown = GlobalHelpers.PISTOLCOOLDOWN;
+                    _damage = 7;
+                }
                 else
+                {
                     _bulletCooldown = GlobalHelpers.RIFLECOOLDOWN;
-
+                    _damage = 10;
+                }
             }
 
             //Changement de type d'attaque

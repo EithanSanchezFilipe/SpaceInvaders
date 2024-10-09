@@ -83,8 +83,9 @@ namespace ZombiesApocalypse
                             //verifie la collision
                             if (bullet.Hitbox.Intersects(zombie.Hitbox) && !bullet.Destroyed)
                             {
+                                
                                 bullet.Destroyed = true;
-                                ((Ennemy)zombie).TakeDamage();
+                                ((Ennemy)zombie).TakeDamage(((Bullet)bullet).BulletDamage);
                                 Console.WriteLine("collision");
                             }
                         }
