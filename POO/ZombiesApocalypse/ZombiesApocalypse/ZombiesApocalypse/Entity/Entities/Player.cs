@@ -79,10 +79,11 @@ namespace ZombiesApocalypse
                 _specialAttackCooldown = GlobalHelpers.ATTACKCHANGECOOLDOWN;
             }
 
-            if (InputHelper.GetKeyStatus().IsKeyDown(Keys.F) && _numberOfFences != 2)
+            if (InputHelper.GetKeyStatus().IsKeyDown(Keys.F) && _numberOfFences != 1)
             {
                 _numberOfFences++;
                 new Fence(_game, Position);
+                Console.WriteLine(_numberOfFences);
             }
 
         }
