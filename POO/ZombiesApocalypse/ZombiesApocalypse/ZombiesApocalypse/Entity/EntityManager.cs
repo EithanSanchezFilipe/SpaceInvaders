@@ -12,6 +12,8 @@ namespace ZombiesApocalypse
         public static void Add(Entity entity)
         {
             Entities.Add(entity);
+
+            //Charger la texture de l'entité
             entity.LoadContent();
         }
 
@@ -49,8 +51,6 @@ namespace ZombiesApocalypse
             
             //Appele d'une methode qui efface toutes les entités mortes
             DeleteEntities();
-
-            Console.WriteLine(_level.NumberOfZombies);
         }
 
         public static void Draw(SpriteBatch spriteBatch)
