@@ -10,7 +10,7 @@ namespace ZombiesApocalypse
     {
         private Game _game;
         private int _numberOfZombiesToSpawn;
-        public int NumberLevel{get; private set;}
+        public static int NumberLevel{get; private set;}
         public int NumberOfZombies { get; set; }
 
         public Level(Game game)
