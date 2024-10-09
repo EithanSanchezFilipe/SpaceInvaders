@@ -9,6 +9,8 @@ namespace ZombiesApocalypse
     {
         private Game _game;
         public static int Damage;
+        public bool isColliding;
+        public float _attackCooldown;
         public Ennemy(Game game, Vector2 StartPosition) : base()
         {
             Position = StartPosition;
@@ -19,6 +21,7 @@ namespace ZombiesApocalypse
             Health = 20;
             EntityManager.Add(this);
             Damage = 5;
+            isColliding = false;
         }
 
         public override void LoadContent()
@@ -31,13 +34,22 @@ namespace ZombiesApocalypse
 
         public override void Update(GameTime gameTime)
         {
-            //Mouvement
-            Velocity = new Vector2(0, 1);
+            _attackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
+            //Verifie si le zombie est pas en collision
+            if (!isColliding)
+            {
+                //Mouvement
+                Velocity = new Vector2(0, 1);
 
-            Velocity = Speed * Velocity;
-            Position += Velocity;
-            //Bouge la hitbox au même temps que le zombie
-            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
+                Velocity = Speed * Velocity;
+                Position += Velocity;
+
+                //Bouge la hitbox au même temps que le zombie
+                Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
+            }
+            else
+                Velocity = Vector2.Zero;
         }
         public void TakeDamage(int Damage)
         {

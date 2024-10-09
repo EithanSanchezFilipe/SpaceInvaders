@@ -26,5 +26,9 @@ namespace ZombiesApocalypse
         {
 
         }
+        public void takeDamage(int Damage)
+        {
+            Health -= Damage;
+        }
     }
 }

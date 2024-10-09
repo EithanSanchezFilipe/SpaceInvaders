@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
+using ZombiesApocalypse.Helpers;
 namespace ZombiesApocalypse
 {
     static class EntityManager
@@ -46,9 +46,10 @@ namespace ZombiesApocalypse
                     bullet.Destroyed = true;
             }
 
-            //Appelle d'une methode qui verifie si il y a des collision entre les balles et les zombies
+            //Appelle de methodes qui verifient si il y a des collision
             CollisionBulletZombie();
-            
+            CollisionFenceZombie();
+
             //Appele d'une methode qui efface toutes les entités mortes
             DeleteEntities();
         }
@@ -97,6 +98,34 @@ namespace ZombiesApocalypse
                                 ((Ennemy)zombie).TakeDamage(((Bullet)bullet).BulletDamage);
                                 Console.WriteLine("collision");
                             }
+                        }
+                    }
+                }
+            }
+        }
+        private static void CollisionFenceZombie()
+        {
+            foreach(Entity entity in Entities.ToArray())
+            {
+                if(entity is Fence fence)
+                {
+                    foreach(Entity ennemy in Entities.ToArray())
+                    {
+                        if(ennemy is Ennemy zombie)
+                        {
+                            if (fence.Hitbox.Intersects(zombie.Hitbox) && !fence.Destroyed)
+                            {
+                                if(zombie._attackCooldown <= 0)
+                                {
+                                    fence.takeDamage(Ennemy.Damage);
+                                    zombie._attackCooldown = GlobalHelpers.ZOMBIEATTACKCOOLDOWN;
+                                }
+
+                                zombie.isColliding = true;
+                                Console.WriteLine("aaaaaaaa");
+                            }
+                            else
+                                zombie.isColliding = false;
                         }
                     }
                 }
