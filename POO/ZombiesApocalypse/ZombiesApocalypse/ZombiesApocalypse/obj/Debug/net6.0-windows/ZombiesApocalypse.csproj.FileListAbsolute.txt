@@ -83,3 +83,4 @@ Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApo
 Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.pdb
 Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ZombiesApocalypse.genruntimeconfig.cache
 Z:\Games\Github\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\obj\Debug\net6.0-windows\ref\ZombiesApocalypse.dll
+C:\Users\pa78gum\Documents\GitHub\SpaceInvaders\POO\ZombiesApocalypse\ZombiesApocalypse\ZombiesApocalypse\bin\Debug\net6.0-windows\Content\File.xnb
