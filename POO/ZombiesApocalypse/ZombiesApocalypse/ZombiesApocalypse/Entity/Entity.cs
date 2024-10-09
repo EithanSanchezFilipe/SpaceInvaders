@@ -17,8 +17,6 @@ namespace ZombiesApocalypse
         public Vector2 Position;
         public int Health;
 
-        private SpriteBatch _spriteBatch;
-
         public Entity()
         {
         }
