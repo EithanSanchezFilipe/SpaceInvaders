@@ -13,6 +13,7 @@ namespace ZombiesApocalypse
         private bool _specialAttack;
         private float _specialAttackCooldown;
         private int _damage;
+        private int _numberOfFences;
         public Player(Game game) : base()
         {
             _game = game;
@@ -21,6 +22,7 @@ namespace ZombiesApocalypse
             Health = 25;
             EntityManager.Add(this);
             _damage = 7;
+            _numberOfFences = 0;
         }
 
         public override void LoadContent()
@@ -75,6 +77,12 @@ namespace ZombiesApocalypse
                 else
                     EntityTexture = _game.Content.Load<Texture2D>("soldat pistolet");
                 _specialAttackCooldown = GlobalHelpers.ATTACKCHANGECOOLDOWN;
+            }
+
+            if (InputHelper.GetKeyStatus().IsKeyDown(Keys.F) && _numberOfFences != 2)
+            {
+                _numberOfFences++;
+                new Fence(_game, Position);
             }
 
         }
