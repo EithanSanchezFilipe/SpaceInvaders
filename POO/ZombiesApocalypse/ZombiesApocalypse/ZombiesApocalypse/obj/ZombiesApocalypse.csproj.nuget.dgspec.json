@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Games\\Github\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj": {}
+    "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj": {}
   },
   "projects": {
-    "Z:\\Games\\Github\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj": {
+    "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Games\\Github\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj",
+        "projectUniqueName": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj",
         "projectName": "ZombiesApocalypse",
-        "projectPath": "Z:\\Games\\Github\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj",
-        "packagesPath": "C:\\Users\\zRaidex\\.nuget\\packages\\",
-        "outputPath": "Z:\\Games\\Github\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\obj\\",
+        "projectPath": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse.csproj",
+        "packagesPath": "C:\\Users\\pa78gum\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pa78gum\\Documents\\GitHub\\SpaceInvaders\\POO\\ZombiesApocalypse\\ZombiesApocalypse\\ZombiesApocalypse\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zRaidex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pa78gum\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -34,11 +37,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,29 +58,10 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -91,7 +70,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
