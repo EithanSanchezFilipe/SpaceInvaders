@@ -18,7 +18,7 @@ namespace ZombiesApocalypse
             _game = game;
             TintColor = Color.White;
             Speed = 5;
-            Health = 100;
+            Health = 25;
             EntityManager.Add(this);
             _damage = 7;
         }
