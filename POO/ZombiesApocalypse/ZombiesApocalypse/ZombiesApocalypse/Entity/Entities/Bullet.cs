@@ -9,15 +9,18 @@ namespace ZombiesApocalypse
     class Bullet : Entity
     {
         private Game _game;
-        public Bullet(Game game, Vector2 StartPosition) : base()
+
+        public int BulletDamage;
+        public Bullet(Game game, Vector2 StartPosition, int bulletDamage) : base()
         {
             //position pour que la balle soit juste au dessus du pistolet et non en haut a gauche du personnage
             Position = StartPosition + new Vector2(48, -20); ;
             _game = game;
             TintColor = Color.White;
             Speed = 5;
-            Health = 100;
             EntityManager.Add(this);
+            Health = 1;
+            BulletDamage = bulletDamage;
         }
 
         public override void LoadContent()
