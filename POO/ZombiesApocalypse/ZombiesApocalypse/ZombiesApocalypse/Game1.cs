@@ -12,6 +12,7 @@ namespace ZombiesApocalypse
         private SpriteBatch _spriteBatch;
         private Player _player;
         private Level _level;
+        private Limit _limit;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -25,6 +26,7 @@ namespace ZombiesApocalypse
         {
             _player = new Player(this);
             _level = new Level(this);
+            _limit = new Limit(this);
             base.Initialize();
         }
 

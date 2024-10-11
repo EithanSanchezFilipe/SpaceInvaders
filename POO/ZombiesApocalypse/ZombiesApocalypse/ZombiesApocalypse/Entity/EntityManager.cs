@@ -44,12 +44,19 @@ namespace ZombiesApocalypse
                     entity.Destroyed = true;
                 if (entity is Bullet bullet && bullet.Position.Y < 0)
                     bullet.Destroyed = true;
+
+                foreach(Entity entity1 in Entities)
+                {
+                    if(entity is Limit limitWire && entity1 is Player player && limitWire.Destroyed)
+                        player.Destroyed = true;
+                }
+
             }
 
             //Appelle de methodes qui verifient si il y a des collision
             CollisionBulletZombie();
             CollisionFenceZombie();
-
+            CollisionLimitZombie();
             //Appele d'une methode qui efface toutes les entités mortes
             DeleteEntities();
         }
@@ -78,14 +85,12 @@ namespace ZombiesApocalypse
         }
         private static void CollisionBulletZombie()
         {
-            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
-            foreach (Entity bullet in Entities.ToArray())
+            foreach (Entity bullet in Entities)
             {
                 //prends que les balles en compte
                 if (bullet is Bullet)
                 {
-                    //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
-                    foreach (Entity zombie in Entities.ToArray())
+                    foreach (Entity zombie in Entities)
                     {
                         //prends que les zombies en compte
                         if (zombie is Ennemy)
@@ -105,11 +110,11 @@ namespace ZombiesApocalypse
         }
         private static void CollisionFenceZombie()
         {
-            foreach(Entity entity in Entities.ToArray())
+            foreach(Entity entity in Entities)
             {
                 if(entity is Fence fence)
                 {
-                    foreach(Entity ennemy in Entities.ToArray())
+                    foreach(Entity ennemy in Entities)
                     {
                         if(ennemy is Ennemy zombie)
                         {
@@ -122,10 +127,26 @@ namespace ZombiesApocalypse
                                 }
 
                                 zombie.isColliding = true;
-                                Console.WriteLine("aaaaaaaa");
                             }
                             else
                                 zombie.isColliding = false;
+                        }
+                    }
+                }
+            }
+        }
+        private static void CollisionLimitZombie()
+        {
+            foreach (Entity entity in Entities)
+            {
+                if(entity is Ennemy zombie)
+                {
+                    foreach(Entity entity1 in Entities)
+                    {
+                        if(entity1 is Limit LimitWire&& zombie.Hitbox.Intersects(LimitWire.Hitbox))
+                        {
+                            zombie.Destroyed = true;
+                            LimitWire.takeDamage(Ennemy.Damage);
                         }
                     }
                 }
