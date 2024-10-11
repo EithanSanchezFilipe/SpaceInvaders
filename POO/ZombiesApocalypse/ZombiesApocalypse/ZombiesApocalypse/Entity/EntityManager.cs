@@ -36,7 +36,7 @@ namespace ZombiesApocalypse
                 _level.addLevel();
                 _level.SpawnZombie();
             }
-            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
+
             foreach (Entity entity in Entities.ToArray())
             {
                 entity.Update(time);
@@ -48,15 +48,27 @@ namespace ZombiesApocalypse
                 foreach(Entity entity1 in Entities)
                 {
                     if(entity is Limit limitWire && entity1 is Player player && limitWire.Destroyed)
+                    {
                         player.Destroyed = true;
+                        Game1._gameState = GameState.GameOver;
+                    }
                 }
+            }
 
+            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
+            if (Game1._gameState == GameState.GameOver)
+            {
+                foreach (Entity entity in Entities.ToArray())
+                {
+                    Entities.Remove(entity);
+                }
             }
 
             //Appelle de methodes qui verifient si il y a des collision
             CollisionBulletZombie();
             CollisionFenceZombie();
             CollisionLimitZombie();
+
             //Appele d'une methode qui efface toutes les entités mortes
             DeleteEntities();
         }
