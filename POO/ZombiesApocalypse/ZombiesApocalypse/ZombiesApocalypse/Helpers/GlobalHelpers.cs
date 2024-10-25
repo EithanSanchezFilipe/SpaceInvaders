@@ -11,6 +11,7 @@ namespace ZombiesApocalypse.Helpers
         public static int SCREENHEIGHT = 900;
         public static int SCREENWIDTH = 700;
         public const int PISTOLCOOLDOWN = 1;
+        public const int FENCECOOLDOWN = 2;
         public const float RIFLECOOLDOWN = (float)0.4;
         public const float ZOMBIEATTACKCOOLDOWN = (float)1.5;
         public const float ATTACKCHANGECOOLDOWN = (float)10;
