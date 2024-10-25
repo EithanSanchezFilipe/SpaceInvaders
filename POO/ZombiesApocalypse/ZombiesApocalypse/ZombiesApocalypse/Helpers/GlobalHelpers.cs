@@ -15,6 +15,7 @@ namespace ZombiesApocalypse.Helpers
         public const float RIFLECOOLDOWN = (float)0.4;
         public const float ZOMBIEATTACKCOOLDOWN = (float)1.5;
         public const float ATTACKCHANGECOOLDOWN = (float)10;
+        public const float LEVELDISPLAYTIMER = 2;
         public const int MINSPAWNDISTANCE = 100;
         public static int RandomNumber(int Min, int Max)
         {

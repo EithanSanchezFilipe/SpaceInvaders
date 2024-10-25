@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Windows.Forms;
 using ZombiesApocalypse.Helpers;
 
 namespace ZombiesApocalypse
@@ -12,6 +13,7 @@ namespace ZombiesApocalypse
         private int _numberOfZombiesToSpawn;
         public static int NumberLevel{get; private set;}
         public int NumberOfZombies { get; set; }
+        private float _levelDisplayTimer;
 
         public Level(Game game)
         {
@@ -19,6 +21,7 @@ namespace ZombiesApocalypse
             NumberLevel = 0;
             NumberOfZombies = 0;
             _numberOfZombiesToSpawn = 5;
+            _levelDisplayTimer = 0f;
         }
         public void addLevel()
         {
@@ -28,6 +31,9 @@ namespace ZombiesApocalypse
             _numberOfZombiesToSpawn = 5 + 4 * NumberLevel;
 
             Ennemy.Damage++;
+
+            //timer qui sert a afficher le texte de chaque nouveau niveau
+            _levelDisplayTimer = GlobalHelpers.LEVELDISPLAYTIMER;
         }
 
         public void SpawnZombie()
@@ -53,7 +59,13 @@ namespace ZombiesApocalypse
                 }
             }
         }
-
+        public void Update(GameTime gameTime)
+        {
+            if (_levelDisplayTimer > 0)
+            {
+                _levelDisplayTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
+        }
         private bool PositionOK(Vector2 SpawnPosition)
         {
             foreach(Entity entity in EntityManager.Entities)
@@ -71,6 +83,14 @@ namespace ZombiesApocalypse
                 }
             }
             return true;
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            
+            if (_levelDisplayTimer > 0)
+            {
+                Text.DrawLevelText(spriteBatch, "Lev e l " + NumberLevel, new Vector2(GlobalHelpers.SCREENWIDTH / 2, GlobalHelpers.SCREENHEIGHT / 2));
+            }
         }
     }
 }

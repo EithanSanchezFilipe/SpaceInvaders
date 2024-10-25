@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ZombiesApocalypse.Helpers;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace ZombiesApocalypse
 {
@@ -53,6 +54,7 @@ namespace ZombiesApocalypse
             {
                 case GameState.Playing:
                     EntityManager.Update(gameTime, _level);
+                    _level.Update(gameTime);
                     if (_player.Health <= 0)
                     {
                         _gameState = GameState.GameOver;
@@ -83,7 +85,7 @@ namespace ZombiesApocalypse
 
             if (_gameState == GameState.Playing)
             {
-                Text.Draw(_spriteBatch);
+                _level.Draw(_spriteBatch);
                 EntityManager.Draw(_spriteBatch);
             }
             else if (_gameState == GameState.GameOver)
