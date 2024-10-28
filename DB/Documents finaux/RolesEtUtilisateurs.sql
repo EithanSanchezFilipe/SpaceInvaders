@@ -1,3 +1,6 @@
+--Effacez les utilisateurs si ils sont déjà crées
+
+
 -- Crée un rôle d'administrateur du jeu
 CREATE ROLE 'Administrateur du jeu';
 
