@@ -1,8 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.Direct2D1;
 using System;
+using System.Reflection.Metadata;
 using ZombiesApocalypse.Helpers;
+using SpriteBatch = Microsoft.Xna.Framework.Graphics.SpriteBatch;
 
 namespace ZombiesApocalypse
 {
@@ -14,7 +17,7 @@ namespace ZombiesApocalypse
         private float _specialAttackCooldown;
         private float _fenceCooldown;
         private int _damage;
-
+        private Texture2D[] Lifes = new Texture2D[5];
 
         public static int NumberOfFences;
         public Player(Game game) : base()
@@ -31,6 +34,10 @@ namespace ZombiesApocalypse
         public override void LoadContent()
         {
             EntityTexture = _game.Content.Load<Texture2D>("soldat pistolet");
+            for (int i = 0; i < Lifes.Length; i++)
+            {
+                Lifes[i] = _game.Content.Load<Texture2D>($"Life{i + 1}");
+            }
 
             //Position du joueur declarer ici car la taille de la texture est defini juste au dessus
             Position = new Vector2(GlobalHelpers.SCREENWIDTH / 2 - EntityTexture.Width / 2, 800);
@@ -91,6 +98,22 @@ namespace ZombiesApocalypse
             }
 
         }
+        public new void Draw(SpriteBatch spriteBatch)
+        {
+            if (!Destroyed)
+            {
+                Console.WriteLine(Health);
+                if (Health == 25)
+                    spriteBatch.Draw(Lifes[4], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2 , 50), null, TintColor);
+                if (Health == 20)
+                    spriteBatch.Draw(Lifes[0], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
+                if (Health == 15)
+                    spriteBatch.Draw(Lifes[1], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
+                if (Health == 10)
+                    spriteBatch.Draw(Lifes[2], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
+                if (Health == 5)
+                    spriteBatch.Draw(Lifes[3], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
+            }
+        }
     }
-
 }

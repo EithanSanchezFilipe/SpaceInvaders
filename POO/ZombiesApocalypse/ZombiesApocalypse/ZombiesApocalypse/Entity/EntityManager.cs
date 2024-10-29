@@ -47,11 +47,10 @@ namespace ZombiesApocalypse
 
                 foreach(Entity entity1 in Entities)
                 {
+                    if (entity is Limit limit && entity1 is Player soldier)
+                        soldier.Health = limit.Health;
                     if(entity is Limit limitWire && entity1 is Player player && limitWire.Destroyed)
-                    {
-                        player.Destroyed = true;
-                        Game1._gameState = GameState.GameOver;
-                    }
+                            Game1._gameState = GameState.GameOver;
                 }
             }
 
@@ -75,10 +74,12 @@ namespace ZombiesApocalypse
 
         public static void Draw(SpriteBatch spriteBatch)
         {
+            Player player = GetPlayer();
             foreach (Entity entity in Entities)
             {
                 entity.Draw(spriteBatch);
             }
+            player.Draw(spriteBatch);
         }
 
         private static void DeleteEntities()
@@ -164,7 +165,17 @@ namespace ZombiesApocalypse
                 }
             }
         }
-       
+        private static Player GetPlayer()
+        {
+            foreach (Entity entity in Entities)
+            {
+                if (entity is Player player)
+                {
+                    return player;
+                }
+            }
+            return null;
+        }
         public static void DestroyAllFences()
         {
             foreach(Entity entity in Entities)

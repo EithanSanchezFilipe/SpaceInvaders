@@ -72,11 +72,11 @@ namespace ZombiesApocalypse
         }
         private void RestartGame()
         {
-            // Reset game state and objects
+            // Remets les Variables a 0
             _player = new Player(this);
             _level = new Level(this);
             _limit = new Limit(this);
-            _gameState = GameState.Playing; // Back to playing state
+            _gameState = GameState.Playing;
         }
         protected override void Draw(GameTime gameTime)
         {
@@ -90,7 +90,7 @@ namespace ZombiesApocalypse
             }
             else if (_gameState == GameState.GameOver)
             {
-                // Show a game over message
+                // affiche le Message de mort
                 string gameOverMessage = "Game Over! Press Enter to Restart";
                 Text.DrawLoseMessage(_spriteBatch, gameOverMessage, new Vector2(GlobalHelpers.SCREENWIDTH / 2, GlobalHelpers.SCREENHEIGHT / 2));
             }

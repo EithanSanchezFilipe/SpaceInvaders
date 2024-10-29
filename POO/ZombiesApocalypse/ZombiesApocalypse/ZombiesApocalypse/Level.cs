@@ -30,8 +30,6 @@ namespace ZombiesApocalypse
             //Calcul pour que le nombre de zombie augemente vite
             _numberOfZombiesToSpawn = 5 + 4 * NumberLevel;
 
-            Ennemy.Damage++;
-
             //timer qui sert a afficher le texte de chaque nouveau niveau
             _levelDisplayTimer = GlobalHelpers.LEVELDISPLAYTIMER;
 
