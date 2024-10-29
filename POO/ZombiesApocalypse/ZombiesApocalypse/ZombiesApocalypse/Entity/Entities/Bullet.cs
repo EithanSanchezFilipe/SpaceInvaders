@@ -38,6 +38,9 @@ namespace ZombiesApocalypse
             Position += Velocity;
             //Bouge la Hitbox en même temps que la balle
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
+
+            if(Position.Y < 0)
+                Destroyed = true;
         }
     }
 
