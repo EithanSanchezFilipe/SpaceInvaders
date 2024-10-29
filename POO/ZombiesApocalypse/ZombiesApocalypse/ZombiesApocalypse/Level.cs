@@ -23,7 +23,7 @@ namespace ZombiesApocalypse
             _numberOfZombiesToSpawn = 5;
             _levelDisplayTimer = 0f;
         }
-        public void addLevel()
+        public void AddLevel()
         {
             NumberLevel++;
 
@@ -34,6 +34,9 @@ namespace ZombiesApocalypse
 
             //timer qui sert a afficher le texte de chaque nouveau niveau
             _levelDisplayTimer = GlobalHelpers.LEVELDISPLAYTIMER;
+
+            EntityManager.DestroyAllFences();
+            Player.NumberOfFences = 0;
         }
 
         public void SpawnZombie()

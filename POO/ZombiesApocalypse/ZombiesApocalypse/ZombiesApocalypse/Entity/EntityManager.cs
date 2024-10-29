@@ -33,7 +33,7 @@ namespace ZombiesApocalypse
             _level = level;
             if (_level.NumberOfZombies == 0)
             {
-                _level.addLevel();
+                _level.AddLevel();
                 _level.SpawnZombie();
             }
 
@@ -161,6 +161,17 @@ namespace ZombiesApocalypse
                             LimitWire.takeDamage(Ennemy.Damage);
                         }
                     }
+                }
+            }
+        }
+       
+        public static void DestroyAllFences()
+        {
+            foreach(Entity entity in Entities)
+            {
+                if(entity is Fence fence)
+                {
+                    fence.Destroyed= true;
                 }
             }
         }
