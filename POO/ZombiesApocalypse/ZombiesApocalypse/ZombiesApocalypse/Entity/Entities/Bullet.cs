@@ -17,7 +17,7 @@ namespace ZombiesApocalypse
             Position = StartPosition + new Vector2(48, -20); ;
             _game = game;
             TintColor = Color.White;
-            Speed = 5;
+            Speed = 10;
             EntityManager.Add(this);
             Health = 1;
             BulletDamage = bulletDamage;

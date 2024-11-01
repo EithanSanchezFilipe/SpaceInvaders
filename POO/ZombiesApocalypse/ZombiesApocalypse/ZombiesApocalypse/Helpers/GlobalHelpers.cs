@@ -12,9 +12,9 @@ namespace ZombiesApocalypse.Helpers
         public static int SCREENWIDTH = 700;
         public const int PISTOLCOOLDOWN = 1;
         public const int FENCECOOLDOWN = 2;
-        public const float RIFLECOOLDOWN = (float)0.4;
-        public const float ZOMBIEATTACKCOOLDOWN = (float)1.5;
-        public const float ATTACKCHANGECOOLDOWN = (float)10;
+        public const float RIFLECOOLDOWN = 0.4f;
+        public const float ZOMBIEATTACKCOOLDOWN = 1.5f;
+        public const int ATTACKCHANGECOOLDOWN = 10;
         public const float LEVELDISPLAYTIMER = 2;
         public const int MINSPAWNDISTANCE = 100;
         public static int RandomNumber(int Min, int Max)
@@ -22,7 +22,6 @@ namespace ZombiesApocalypse.Helpers
             Random rnd = new Random();
             int NmbrAleatoire = rnd.Next(Min, Max);
             return NmbrAleatoire;
-        }
-
+        } 
     }
 }
