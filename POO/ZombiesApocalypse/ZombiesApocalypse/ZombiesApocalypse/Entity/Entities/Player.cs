@@ -103,16 +103,16 @@ namespace ZombiesApocalypse
         {
             if (!Destroyed)
             {
-                if (Health == 25)
-                    spriteBatch.Draw(Lifes[4], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2 , 50), null, TintColor);
-                if (Health == 20)
-                    spriteBatch.Draw(Lifes[0], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
-                if (Health == 15)
-                    spriteBatch.Draw(Lifes[1], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
-                if (Health == 10)
-                    spriteBatch.Draw(Lifes[2], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
                 if (Health == 5)
-                    spriteBatch.Draw(Lifes[3], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2, 50), null, TintColor);
+                    spriteBatch.Draw(Lives[4], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lives[0].Width / 2, 50), null, TintColor);
+                if (Health == 4)
+                    spriteBatch.Draw(Lives[3], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lives[0].Width / 2, 50), null, TintColor);
+                if (Health == 3)
+                    spriteBatch.Draw(Lives[1], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lives[0].Width / 2, 50), null, TintColor);
+                if (Health == 2)
+                    spriteBatch.Draw(Lives[2], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lives[0].Width / 2, 50), null, TintColor);
+                if (Health == 1)
+                    spriteBatch.Draw(Lives[0], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lives[0].Width / 2, 50), null, TintColor);
             }
         }
     }
