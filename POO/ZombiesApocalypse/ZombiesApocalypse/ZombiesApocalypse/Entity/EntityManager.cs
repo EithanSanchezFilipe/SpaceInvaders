@@ -114,7 +114,6 @@ namespace ZombiesApocalypse
                                 
                                 bullet.Destroyed = true;
                                 ((Ennemy)zombie).TakeDamage(((Bullet)bullet).BulletDamage);
-                                Console.WriteLine("collision");
                             }
                         }
                     }

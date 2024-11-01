@@ -102,7 +102,6 @@ namespace ZombiesApocalypse
         {
             if (!Destroyed)
             {
-                Console.WriteLine(Health);
                 if (Health == 25)
                     spriteBatch.Draw(Lifes[4], new Vector2(GlobalHelpers.SCREENWIDTH / 2 - Lifes[0].Width / 2 , 50), null, TintColor);
                 if (Health == 20)
