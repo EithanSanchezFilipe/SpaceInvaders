@@ -12,7 +12,7 @@ namespace ZombiesApocalypse
         {
             _game = game;
             TintColor = Color.White;
-            Health = 25;
+            Health = 5;
             EntityManager.Add(this);
         }
         public override void LoadContent()

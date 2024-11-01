@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SharpDX.Direct2D1;
+using SharpDX.Direct3D9;
 using System;
 using System.Reflection.Metadata;
 using ZombiesApocalypse.Helpers;
@@ -17,7 +18,7 @@ namespace ZombiesApocalypse
         private float _specialAttackCooldown;
         private float _fenceCooldown;
         private int _damage;
-        private Texture2D[] Lifes = new Texture2D[5];
+        private Texture2D[] Lives = new Texture2D[5];
 
         public static int NumberOfFences;
         public Player(Game game) : base()
@@ -25,7 +26,7 @@ namespace ZombiesApocalypse
             _game = game;
             TintColor = Color.White;
             Speed = 5;
-            Health = 25;
+            Health = 5;
             EntityManager.Add(this);
             _damage = 7;
             NumberOfFences = 0;
@@ -34,9 +35,9 @@ namespace ZombiesApocalypse
         public override void LoadContent()
         {
             EntityTexture = _game.Content.Load<Texture2D>("soldat pistolet");
-            for (int i = 0; i < Lifes.Length; i++)
+            for (int i = 0; i < Lives.Length; i++)
             {
-                Lifes[i] = _game.Content.Load<Texture2D>($"Life{i + 1}");
+                Lives[i] = _game.Content.Load<Texture2D>($"Life{i + 1}");
             }
 
             //Position du joueur declarer ici car la taille de la texture est defini juste au dessus
@@ -63,7 +64,6 @@ namespace ZombiesApocalypse
 
             if (InputHelper.GetKeyStatus().IsKeyDown(Keys.Space) && _bulletCooldown <= 0)
             {
-                new Bullet(_game, Position, _damage);
                 if (!_specialAttack)
                 {
                     _bulletCooldown = GlobalHelpers.PISTOLCOOLDOWN;
@@ -74,6 +74,7 @@ namespace ZombiesApocalypse
                     _bulletCooldown = GlobalHelpers.RIFLECOOLDOWN;
                     _damage = 10;
                 }
+                new Bullet(_game, Position, _damage);
             }
 
             //Changement de type d'attaque

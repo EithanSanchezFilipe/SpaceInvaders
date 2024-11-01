@@ -20,7 +20,7 @@ namespace ZombiesApocalypse
             Speed = 1;
             Health = 20;
             EntityManager.Add(this);
-            Damage = 5;
+            Damage = 1;
             isColliding = false;
         }
 
