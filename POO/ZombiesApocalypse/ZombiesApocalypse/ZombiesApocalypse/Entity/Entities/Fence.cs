@@ -23,7 +23,7 @@ namespace ZombiesApocalypse
         }
 
         /// <summary>
-        /// Methode qui permet au zombie de se deplacer et de mettre a jour la hitbox
+        /// Methode qui initialise les textures et la hitbox de Fence
         /// </summary>
         public override void LoadContent()
         {

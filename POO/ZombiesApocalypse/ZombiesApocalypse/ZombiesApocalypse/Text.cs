@@ -27,5 +27,17 @@ namespace ZombiesApocalypse
             Vector2 centeredPosition = position - textSize / 2;
             spriteBatch.DrawString(_font, text, centeredPosition, Color.White);
         }
+        /// <summary>
+        /// MEthode qui permet au niveau de s'afficher
+        /// </summary>
+        /// <param name="spriteBatch"></param>
+        /// <param name="text"></param>
+        /// <param name="position"></param>
+        public static void DrawLevelText(SpriteBatch spriteBatch, string text, Vector2 position)
+        {
+            Vector2 textSize = _font.MeasureString(text);
+            Vector2 centeredPosition = position - textSize / 2;
+            spriteBatch.DrawString(_font, text, centeredPosition, Color.Yellow);
+        }
     }
 }

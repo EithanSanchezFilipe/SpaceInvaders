@@ -11,6 +11,12 @@ namespace ZombiesApocalypse
         private Game _game;
 
         public int BulletDamage;
+        /// <summary>
+        /// Constructeur de la classe bullet
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="StartPosition"></param>
+        /// <param name="bulletDamage"></param>
         public Bullet(Game game, Vector2 StartPosition, int bulletDamage) : base()
         {
             //position pour que la balle soit juste au dessus du pistolet et non en haut a gauche du personnage
@@ -24,12 +30,19 @@ namespace ZombiesApocalypse
             BulletDamage = bulletDamage;
         }
 
+        /// <summary>
+        /// Methode qui initialise les textures et la hitbox de bullet
+        /// </summary>
         public override void LoadContent()
         {
             EntityTexture = _game.Content.Load<Texture2D>("pistolBullet");
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
         }
 
+        /// <summary>
+        /// Methode qui permet a la balle de se deplacer ainsi que la hitbox
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             //Mouvement
