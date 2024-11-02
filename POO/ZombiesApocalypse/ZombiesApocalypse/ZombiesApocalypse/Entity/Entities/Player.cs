@@ -21,6 +21,10 @@ namespace ZombiesApocalypse
         private Texture2D[] Lives = new Texture2D[5];
 
         public static int NumberOfFences;
+        /// <summary>
+        /// Constructeur de la classe Player
+        /// </summary>
+        /// <param name="game"></param>
         public Player(Game game) : base()
         {
             _game = game;
@@ -31,7 +35,9 @@ namespace ZombiesApocalypse
             _damage = 7;
             NumberOfFences = 0;
         }
-
+        /// <summary>
+        /// Methode qui initialise les textures et la hitbox de limit
+        /// </summary>
         public override void LoadContent()
         {
             EntityTexture = _game.Content.Load<Texture2D>("soldat pistolet");
@@ -44,6 +50,10 @@ namespace ZombiesApocalypse
             Position = new Vector2(GlobalHelpers.SCREENWIDTH / 2 - EntityTexture.Width / 2, 800);
         }
 
+        /// <summary>
+        /// Methode qui gere les deplacements, changement d'attaque, le placement de barricades et attaque
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             //Mouvement
@@ -99,6 +109,10 @@ namespace ZombiesApocalypse
             }
 
         }
+        /// <summary>
+        /// Methode qui dessine la barre de vie
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public new void Draw(SpriteBatch spriteBatch)
         {
             if (!Destroyed)

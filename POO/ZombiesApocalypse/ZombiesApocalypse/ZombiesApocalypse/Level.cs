@@ -14,7 +14,10 @@ namespace ZombiesApocalypse
         public static int NumberLevel{get; private set;}
         public int NumberOfZombies { get; set; }
         private float _levelDisplayTimer;
-
+        /// <summary>
+        /// Constructeur de la classe level
+        /// </summary>
+        /// <param name="game"></param>
         public Level(Game game)
         {
             _game = game;
@@ -23,6 +26,9 @@ namespace ZombiesApocalypse
             _numberOfZombiesToSpawn = 5;
             _levelDisplayTimer = 0f;
         }
+        /// <summary>
+        /// Methode qui ajoute un niveau
+        /// </summary>
         public void AddLevel()
         {
             NumberLevel++;
@@ -37,6 +43,9 @@ namespace ZombiesApocalypse
             Player.NumberOfFences = 0;
         }
 
+        /// <summary>
+        /// Methode qui fait apparaitre les zombies suivant le niveau
+        /// </summary>
         public void SpawnZombie()
         {
             Vector2 SpawnPosition = Vector2.Zero;
@@ -53,13 +62,17 @@ namespace ZombiesApocalypse
 
                     if (PositionOK(SpawnPosition))
                     {
-                        new Ennemy(_game, SpawnPosition);
+                        new Enemy(_game, SpawnPosition);
                         NumberOfZombies++;
                         break;
                     }
                 }
             }
         }
+        /// <summary>
+        /// Methode qui verifie le cooldown du level display
+        /// </summary>
+        /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
             if (_levelDisplayTimer > 0)
@@ -67,12 +80,17 @@ namespace ZombiesApocalypse
                 _levelDisplayTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
         }
+        /// <summary>
+        /// Methode qui verifie la position d'un zombie (si il n'est pas sur un autre)
+        /// </summary>
+        /// <param name="SpawnPosition"></param>
+        /// <returns>une booleen qui dit si la position est valide ou non</returns>
         private bool PositionOK(Vector2 SpawnPosition)
         {
             foreach(Entity entity in EntityManager.Entities)
             {
                 //Prends que les entités qui sont des zombies
-                if(entity is Ennemy)
+                if(entity is Enemy)
                 {
                     //Calcule la distance entre zombies
                     float distance = Vector2.Distance(SpawnPosition, entity.Position);
@@ -85,6 +103,10 @@ namespace ZombiesApocalypse
             }
             return true;
         }
+        /// <summary>
+        /// Methode qui dessine le niveau actuel
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public void Draw(SpriteBatch spriteBatch)
         {
             

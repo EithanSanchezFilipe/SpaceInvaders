@@ -8,6 +8,11 @@ namespace ZombiesApocalypse
     class Fence : Entity
     {
         private Game _game;
+        /// <summary>
+        /// Constructeur de la classe Fence
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="PlayerPosition"></param>
         public Fence(Game game , Vector2 PlayerPosition) : base()
         {
             _game = game;
@@ -16,6 +21,10 @@ namespace ZombiesApocalypse
             Position = new Vector2(PlayerPosition.X, GlobalHelpers.SCREENHEIGHT/2);
             EntityManager.Add(this);
         }
+
+        /// <summary>
+        /// Methode qui permet au zombie de se deplacer et de mettre a jour la hitbox
+        /// </summary>
         public override void LoadContent()
         {
             EntityTexture = _game.Content.Load<Texture2D>("Fence");
@@ -26,6 +35,10 @@ namespace ZombiesApocalypse
         {
 
         }
+        /// <summary>
+        /// Methode qui permet au zombie de prendre des degats
+        /// </summary>
+        /// <param name="Damage"></param>
         public void takeDamage(int Damage)
         {
             Health -= Damage;

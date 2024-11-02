@@ -21,6 +21,9 @@ namespace ZombiesApocalypse
         private Level _level;
         private Limit _limit;
         public static GameState _gameState;
+        /// <summary>
+        /// Constructeur de la classe Game
+        /// </summary>
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -29,7 +32,9 @@ namespace ZombiesApocalypse
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
-
+        /// <summary>
+        /// Methode qui instancie les objets
+        /// </summary>
         protected override void Initialize()
         {
             _player = new Player(this);
@@ -38,14 +43,19 @@ namespace ZombiesApocalypse
 
             base.Initialize();
         }
-
+        /// <summary>
+        /// Methode qui initialise les textures et typographies
+        /// </summary>
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             EntityManager.LoadContent();
             Text.LoadContent(this);
         }
-
+        /// <summary>
+        /// Methode qui verifie si le jeu est en cours et actualise toutes les entites a chaque frame
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -70,6 +80,9 @@ namespace ZombiesApocalypse
             }
             base.Update(gameTime);
         }
+        /// <summary>
+        /// Methode qui mets tous les objets instanices a 0
+        /// </summary>
         private void RestartGame()
         {
             // Remets les Variables a 0
@@ -78,6 +91,10 @@ namespace ZombiesApocalypse
             _limit = new Limit(this);
             _gameState = GameState.Playing;
         }
+        /// <summary>
+        /// Methode qui dessine tous ce qui est visuel en appelant les methodes draw de chaque entite
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);

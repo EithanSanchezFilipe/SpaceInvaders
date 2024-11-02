@@ -16,14 +16,18 @@ namespace ZombiesApocalypse
         public Rectangle Hitbox;
         public Vector2 Position;
         public int Health;
-
+        /// <summary>
+        /// Constructeur de la calsse Entity
+        /// </summary>
         public Entity()
         {
         }
-
         public abstract void LoadContent();
         public abstract void Update(GameTime time);
-
+        /// <summary>
+        /// methode qui permet de dessiner toutes les entites
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public void Draw(SpriteBatch spriteBatch)
         {
             if (EntityTexture != null)

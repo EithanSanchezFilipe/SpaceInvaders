@@ -7,23 +7,20 @@ namespace ZombiesApocalypse
     {
         private static SpriteFont _font;
 
+        /// <summary>
+        /// Methode qui initialise la typographie
+        /// </summary>
+        /// <param name="game"></param>
         public static void LoadContent(Game game)
         {
             _font = game.Content.Load<SpriteFont>("File");
         }
-
-        public static void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.DrawString(_font, "Lev e l : " + Level.NumberLevel, new Vector2(30, 30), Color.White);
-        }
-
-        public static void DrawLevelText(SpriteBatch spriteBatch, string text, Vector2 position)
-        {
-            Vector2 textSize = _font.MeasureString(text);
-            Vector2 centeredPosition = position - textSize / 2;
-            spriteBatch.DrawString(_font, text, centeredPosition, Color.Yellow);
-        }
-
+        /// <summary>
+        /// Methode qui affiche le message de mort
+        /// </summary>
+        /// <param name="spriteBatch"></param>
+        /// <param name="text"></param>
+        /// <param name="position"></param>
         public static void DrawLoseMessage(SpriteBatch spriteBatch, string text, Vector2 position)
         {
             Vector2 textSize = _font.MeasureString(text);

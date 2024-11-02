@@ -17,6 +17,12 @@ namespace ZombiesApocalypse.Helpers
         public const int ATTACKCHANGECOOLDOWN = 10;
         public const float LEVELDISPLAYTIMER = 2;
         public const int MINSPAWNDISTANCE = 100;
+        /// <summary>
+        /// Methode qui genere un chiffre aleatoire
+        /// </summary>
+        /// <param name="Min"></param>
+        /// <param name="Max"></param>
+        /// <returns>un chiffre aleatoire dans l'intervale donnee</returns>
         public static int RandomNumber(int Min, int Max)
         {
             Random rnd = new Random();

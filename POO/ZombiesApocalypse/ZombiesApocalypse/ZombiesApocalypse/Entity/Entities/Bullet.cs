@@ -14,7 +14,8 @@ namespace ZombiesApocalypse
         public Bullet(Game game, Vector2 StartPosition, int bulletDamage) : base()
         {
             //position pour que la balle soit juste au dessus du pistolet et non en haut a gauche du personnage
-            Position = StartPosition + new Vector2(48, -20); ;
+            Position = StartPosition + new Vector2(48, -20);
+
             _game = game;
             TintColor = Color.White;
             Speed = 10;
@@ -33,13 +34,13 @@ namespace ZombiesApocalypse
         {
             //Mouvement
             Velocity = new Vector2(0, -1);
-
             Velocity = Speed * Velocity;
             Position += Velocity;
+
             //Bouge la Hitbox en même temps que la balle
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
 
-            if(Position.Y < 0)
+            if (Position.Y < 0)
                 Destroyed = true;
         }
     }

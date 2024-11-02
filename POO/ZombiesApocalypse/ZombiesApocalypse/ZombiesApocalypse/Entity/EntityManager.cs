@@ -9,6 +9,10 @@ namespace ZombiesApocalypse
     {
         public static List<Entity> Entities = new List<Entity>();
         private static Level _level;
+        /// <summary>
+        /// Methode qui ajoute une entite a une liste
+        /// </summary>
+        /// <param name="entity"></param>
         public static void Add(Entity entity)
         {
             Entities.Add(entity);
@@ -17,7 +21,9 @@ namespace ZombiesApocalypse
             entity.LoadContent();
         }
 
-
+        /// <summary>
+        /// Methode qui initialise les hitbox et textures de toutes les entites
+        /// </summary>
         public static void LoadContent()
         {
 
@@ -27,7 +33,11 @@ namespace ZombiesApocalypse
             }
         }
 
-
+        /// <summary>
+        /// Methode qui actualise le niveau, les entites
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="level"></param>
         public static void Update(GameTime time, Level level)
         {
             _level = level;
@@ -37,6 +47,7 @@ namespace ZombiesApocalypse
                 _level.SpawnZombie();
             }
 
+            //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
             foreach (Entity entity in Entities.ToArray())
             {
                 entity.Update(time);
@@ -71,7 +82,10 @@ namespace ZombiesApocalypse
             //Appele d'une methode qui efface toutes les entités mortes
             DeleteEntities();
         }
-
+        /// <summary>
+        /// Methode qui appelle les methodes draw de chaque entite
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public static void Draw(SpriteBatch spriteBatch)
         {
             Player player = GetPlayer();
@@ -82,6 +96,9 @@ namespace ZombiesApocalypse
             player.Draw(spriteBatch);
         }
 
+        /// <summary>
+        /// Methode qui enleve des entites de la liste
+        /// </summary>
         private static void DeleteEntities()
         {
             //ToArray afin déviter les modifications alors qu'on est entrain de parcourir cette liste
@@ -90,12 +107,15 @@ namespace ZombiesApocalypse
                 if (entity.Destroyed)
                 {
                     Entities.Remove(entity);
-                    if (entity is Ennemy zombie)
+                    if (entity is Enemy zombie)
                         _level.NumberOfZombies--;
                 }
 
             }
         }
+        /// <summary>
+        /// Verifie les collisions entre les balles et les zombies
+        /// </summary>
         private static void CollisionBulletZombie()
         {
             foreach (Entity bullet in Entities)
@@ -106,20 +126,23 @@ namespace ZombiesApocalypse
                     foreach (Entity zombie in Entities)
                     {
                         //prends que les zombies en compte
-                        if (zombie is Ennemy)
+                        if (zombie is Enemy)
                         {
                             //verifie la collision
                             if (bullet.Hitbox.Intersects(zombie.Hitbox) && !bullet.Destroyed)
                             {
                                 
                                 bullet.Destroyed = true;
-                                ((Ennemy)zombie).TakeDamage(((Bullet)bullet).BulletDamage);
+                                ((Enemy)zombie).TakeDamage(((Bullet)bullet).BulletDamage);
                             }
                         }
                     }
                 }
             }
         }
+        /// <summary>
+        /// Verifie les collisions entre les barricades et les zombies
+        /// </summary>
         private static void CollisionFenceZombie()
         {
             foreach(Entity entity in Entities)
@@ -128,13 +151,13 @@ namespace ZombiesApocalypse
                 {
                     foreach(Entity ennemy in Entities)
                     {
-                        if(ennemy is Ennemy zombie)
+                        if(ennemy is Enemy zombie)
                         {
                             if (fence.Hitbox.Intersects(zombie.Hitbox) && !fence.Destroyed)
                             {
                                 if(zombie._attackCooldown <= 0)
                                 {
-                                    fence.takeDamage(Ennemy.Damage);
+                                    fence.takeDamage(Enemy.Damage);
                                     zombie._attackCooldown = GlobalHelpers.ZOMBIEATTACKCOOLDOWN;
                                 }
 
@@ -147,23 +170,30 @@ namespace ZombiesApocalypse
                 }
             }
         }
+        /// <summary>
+        /// Verifie les collisions entre la limite et les zombies
+        /// </summary>
         private static void CollisionLimitZombie()
         {
             foreach (Entity entity in Entities)
             {
-                if(entity is Ennemy zombie)
+                if(entity is Enemy zombie)
                 {
                     foreach(Entity entity1 in Entities)
                     {
                         if(entity1 is Limit LimitWire&& zombie.Hitbox.Intersects(LimitWire.Hitbox))
                         {
                             zombie.Destroyed = true;
-                            LimitWire.takeDamage(Ennemy.Damage);
+                            LimitWire.takeDamage(Enemy.Damage);
                         }
                     }
                 }
             }
         }
+        /// <summary>
+        /// Methode qui permet de recupere le player de la liste
+        /// </summary>
+        /// <returns>le joueur</returns>
         private static Player GetPlayer()
         {
             foreach (Entity entity in Entities)
@@ -175,6 +205,9 @@ namespace ZombiesApocalypse
             }
             return null;
         }
+        /// <summary>
+        /// Methode qui detruit toutes les barricades a chaque niveau
+        /// </summary>
         public static void DestroyAllFences()
         {
             foreach(Entity entity in Entities)

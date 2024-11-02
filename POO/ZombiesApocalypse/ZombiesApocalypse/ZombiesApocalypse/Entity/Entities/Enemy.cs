@@ -5,13 +5,18 @@ using System;
 
 namespace ZombiesApocalypse
 {
-    class Ennemy : Entity
+    class Enemy : Entity
     {
         private Game _game;
         public static int Damage;
         public bool isColliding;
         public float _attackCooldown;
-        public Ennemy(Game game, Vector2 StartPosition) : base()
+        /// <summary>
+        /// Constructeur de la classe Enemy
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="StartPosition"></param>
+        public Enemy(Game game, Vector2 StartPosition) : base()
         {
             Position = StartPosition;
 
@@ -24,14 +29,21 @@ namespace ZombiesApocalypse
             isColliding = false;
         }
 
+        /// <summary>
+        /// Methode qui initialise les textures et la hitbox
+        /// </summary>
         public override void LoadContent()
         {
             EntityTexture = _game.Content.Load<Texture2D>("zombie");
 
-            //lahitbox se place ou le zombie est
+            //la hitbox se place ou le zombie est
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, EntityTexture.Width, EntityTexture.Height);
         }
 
+        /// <summary>
+        /// Methode qui permet au zombie de se deplacer et de mettre a jour la hitbox
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             _attackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -51,6 +63,10 @@ namespace ZombiesApocalypse
             else
                 Velocity = Vector2.Zero;
         }
+        /// <summary>
+        /// Methode qui permet au zombie de prendre des degats
+        /// </summary>
+        /// <param name="Damage"></param>
         public void TakeDamage(int Damage)
         {
             Health -=Damage;
